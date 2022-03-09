@@ -12,6 +12,8 @@ buildscript {
 }
 
 allprojects {
+    apply(plugin = Plugins.ktlint)
+
     repositories {
         google()
         mavenCentral()
