@@ -26,7 +26,19 @@ kotlin {
     
     sourceSets {
         // Common ----------
-        val commonMain by getting
+        val commonMain by getting{
+            dependencies {
+                implementation(Ktor.core)
+                implementation(Ktor.clientSerialization)
+                implementation(Kotlin.annotations)
+                implementation(Kotlinx.datetime)
+                implementation(Kotlinx.common)
+                implementation(Kotlinx.serialization)
+                implementation(SQLDelight.runtime)
+                implementation(Koin.core)
+                implementation(Koin.test)
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))

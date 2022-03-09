@@ -2,7 +2,7 @@
 // (see https://kotlinlang.org/docs/reference/using-gradle.html)
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 val ktlint by configurations.creating

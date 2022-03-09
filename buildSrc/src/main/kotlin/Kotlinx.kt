@@ -1,5 +1,5 @@
 object Kotlinx {
-    private const val kotlinxDatetimeVersion = "0.1.1"
+    private const val kotlinxDatetimeVersion = "0.3.2"
     const val coroutines = "1.5.0-native-mt"
     const val kotlinxSerialization = "1.2.1"
 

@@ -1,5 +1,5 @@
 object Koin {
-    private const val koin = "3.1.1"
+    private const val koin = "3.1.5"
 
     const val core = "io.insert-koin:koin-core:${koin}"
     const val android = "io.insert-koin:koin-android:${koin}"
