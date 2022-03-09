@@ -1,7 +1,9 @@
 plugins {
-    kotlin("multiplatform")
-    kotlin("native.cocoapods")
-    id("com.android.library")
+    kotlin(KotlinPlugins.multiplatform)
+    kotlin(KotlinPlugins.cocoapods)
+    kotlin(KotlinPlugins.serialization) version Kotlin.version
+    id(Plugins.androidLibrary)
+    id(Plugins.sqlDelight)
 }
 
 version = "1.0"
@@ -23,14 +25,20 @@ kotlin {
     }
     
     sourceSets {
+        // Common ----------
         val commonMain by getting
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
             }
         }
+
+        // Android ----------
         val androidMain by getting
         val androidTest by getting
+
+
+        // iOS ----------
         val iosX64Main by getting
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
@@ -53,10 +61,17 @@ kotlin {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = Application.compileSdk
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdk = 21
-        targetSdk = 32
+        minSdk = Application.minSdk
+        targetSdk = Application.targetSdk
+    }
+}
+
+sqldelight {
+    database("KmmBikeShareDatabase") {
+        packageName = "de.darthkali.kmm_bike_share.datasource.database"
+        sourceFolders = listOf("sqldelight")
     }
 }
