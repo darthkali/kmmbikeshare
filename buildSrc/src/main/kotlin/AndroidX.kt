@@ -1,6 +1,6 @@
 object Versions {
-    const val appCompatVersion = "1.3.0-rc01"
-    const val fragmentKtxVersion = "1.3.3"
+    const val appCompatVersion = "1.4.1"
+    const val fragmentKtxVersion = "1.4.1"
     const val test = "1.3.0"
     const val test_ext = "1.1.2"
 }

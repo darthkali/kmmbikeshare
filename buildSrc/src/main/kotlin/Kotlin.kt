@@ -1,5 +1,5 @@
 object Kotlin {
-    const val version = "1.5.30"
+    const val version = "1.6.10"
 
     const val commonTest = "org.jetbrains.kotlin:kotlin-test-common:${version}"
     const val annotations = "org.jetbrains.kotlin:kotlin-test-annotations-common:${version}"
