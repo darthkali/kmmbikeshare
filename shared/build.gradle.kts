@@ -41,13 +41,38 @@ kotlin {
         }
         val commonTest by getting {
             dependencies {
-                implementation(kotlin("test"))
+                implementation(Kotlin.commonTest)
+                implementation(Kotlin.annotations)
+                implementation(Koin.test)
             }
         }
 
         // Android ----------
-        val androidMain by getting
-        val androidTest by getting
+        val androidMain by getting{
+            dependencies {
+                implementation(Ktor.android)
+                implementation(SQLDelight.androidDriver)
+                implementation(Kotlinx.android)
+                implementation(Koin.test)
+                implementation(Koin.testJunit4)
+            }
+        }
+
+        val androidTest by getting {
+            dependencies {
+                implementation(Kotlin.jvm)
+                implementation(Kotlin.junit)
+                implementation(Ktor.android)
+                implementation(SQLDelight.androidDriver)
+                implementation(AndroidXTest.core)
+                implementation(AndroidXTest.junit)
+                implementation(AndroidXTest.runner)
+                implementation(AndroidXTest.rules)
+                implementation(Kotlinx.test)
+                implementation(Robolectric.robolectric)
+                implementation(Koin.android)
+            }
+        }
 
 
         // iOS ----------
@@ -59,6 +84,18 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+
+            dependencies {
+                implementation(Ktor.ios)
+                implementation(SQLDelight.nativeDriver)
+                implementation(Koin.core)
+                implementation(Koin.test)
+                implementation(Kotlinx.common) {
+                    version {
+                        strictly(Kotlinx.coroutines)
+                    }
+                }
+            }
         }
         val iosX64Test by getting
         val iosArm64Test by getting

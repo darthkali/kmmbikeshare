@@ -2,8 +2,8 @@ package de.darthkali.kmm_bike_share.android
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import de.darthkali.kmm_bike_share.Greeting
 import android.widget.TextView
+import de.darthkali.kmm_bike_share.Greeting
 
 fun greet(): String {
     return Greeting().greeting()

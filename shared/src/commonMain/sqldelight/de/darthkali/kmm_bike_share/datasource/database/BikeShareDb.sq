@@ -1,0 +1,66 @@
+-- -----------------------------------------------------
+-- Table
+-- -----------------------------------------------------
+CREATE TABLE bike_share_Entity(
+    id      INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name    TEXT    NOT NULL,
+    image   TEXT    NOT NULL,
+    apiId   INTEGER    NOT NULL
+);
+
+-- -----------------------------------------------------
+-- CRUD
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- INSERT
+-- -----------------------------------------------------
+insertBikeShare:
+INSERT INTO bike_share_Entity(id,name, image, apiId)
+SELECT ?, ?, ?, ?;
+
+
+-- -----------------------------------------------------
+-- READ
+-- -----------------------------------------------------
+getAllBikeShares:
+SELECT * FROM bike_share_Entity
+LIMIT :pageSize
+OFFSET :offset;
+
+getBikeShareById:
+SELECT * FROM bike_share_Entity
+WHERE id = :id;
+
+
+getBikeShareByApiId:
+SELECT * FROM bike_share_Entity
+WHERE apiId = :apiId;
+
+searchBikeShares:
+SELECT * FROM bike_share_Entity
+WHERE name LIKE ('%' || :query || '%')
+LIMIT :pageSize
+OFFSET :offset;
+
+getLastInsertRowId:
+SELECT last_insert_rowid();
+
+
+-- -----------------------------------------------------
+-- UPDATE
+-- -----------------------------------------------------
+updateBikeShare:
+UPDATE bike_share_Entity
+SET name = ?, image = ?
+WHERE apiId = ?;
+
+
+-- -----------------------------------------------------
+-- DELETE
+-- -----------------------------------------------------
+deleteBikeShareById:
+DELETE FROM bike_share_Entity WHERE id = ?;
+
+deleteAllBikeShares:
+DELETE FROM bike_share_Entity;
