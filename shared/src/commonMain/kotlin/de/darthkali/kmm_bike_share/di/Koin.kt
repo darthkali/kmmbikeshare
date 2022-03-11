@@ -1,10 +1,7 @@
 package de.darthkali.kmm_bike_share.di
 
-import de.darthkali.kmm_bike_share.datasource.database.KmmBikeShareDatabase
-import de.darthkali.kmm_bike_share.datasource.database.repository.recipe.RecipeRepository
-import de.darthkali.kmm_bike_share.datasource.database.repository.recipe.RecipeRepositoryImpl
-import de.darthkali.kmm_bike_share.datasource.network.IngredientService
-import de.darthkali.kmm_bike_share.datasource.network.IngredientServiceImpl
+import de.darthkali.kmm_bike_share.datasource.network.BicycleSharingSystemService
+import de.darthkali.kmm_bike_share.datasource.network.KtorClientFactory
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
 import org.koin.dsl.KoinAppDeclaration
@@ -16,8 +13,8 @@ fun initKoin(appDeclaration: KoinAppDeclaration = {}) =
         modules(
             platformModule(),
             network,
-            database,
-            interactor
+//            database,
+//            interactor
         )
     }
 
@@ -27,18 +24,18 @@ fun initKoin() = initKoin() {}
 expect fun platformModule(): Module
 
 val network = module {
-//    single { de.darthkali.datasource.kmm_bike_share.network.KtorClientFactory() }
-    single<IngredientService> { IngredientServiceImpl() }
+    single { KtorClientFactory() }
+    single { BicycleSharingSystemService() }
 }
 
-val database = module {
-    single { KmmBikeShareDatabase(get()) }
-//    single<IngredientRepository> { IngredientRepositoryImpl() }
-    single<RecipeRepository> { RecipeRepositoryImpl() }
-//    single<RecipeIngredientRepository> { RecipeIngredientRepositoryImpl() }
-//    single<WeekRecipeRepository> { WeekRecipeRepositoryImpl() }
-}
+//val database = module {
+//    single { KmmBikeShareDatabase(get()) }
+////    single<IngredientRepository> { IngredientRepositoryImpl() }
+//    single<RecipeRepository> { RecipeRepositoryImpl() }
+////    single<RecipeIngredientRepository> { RecipeIngredientRepositoryImpl() }
+////    single<WeekRecipeRepository> { WeekRecipeRepositoryImpl() }
+//}
 
-val interactor = module {
-//    single { SearchBikeShare() }
-}
+//val interactor = module {
+////    single { SearchBikeShare() }
+//}

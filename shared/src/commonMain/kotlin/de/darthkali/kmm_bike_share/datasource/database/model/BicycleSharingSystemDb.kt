@@ -1,6 +1,9 @@
-package de.darthkali.kmm_bike_share.domain.model
+package de.darthkali.kmm_bike_share.datasource.database.model
 
-data class BicycleSharingSystem(
+import de.darthkali.kmm_bike_share.domain.model.BicycleSharingSystem
+
+data class BicycleSharingSystemDb(
+    var databaseId: Int? = null,
     var bssid: String,
     var brand: String? = "",
     var city: String? = "",
@@ -12,6 +15,8 @@ data class BicycleSharingSystem(
 
     override fun toString(): String {
         return StringBuilder()
+            .append("|databaseId: ")
+            .append(this.databaseId)
             .append("| bssid: ")
             .append(this.bssid)
             .append("| brand: ")
@@ -45,8 +50,9 @@ data class BicycleSharingSystem(
         if (this === other) return true
         if (other == null || this::class != other::class) return false
 
-        other as BicycleSharingSystem
+        other as BicycleSharingSystemDb
 
+        if (databaseId != other.databaseId) return false
         if (bssid != other.bssid) return false
         if (brand != other.brand) return false
         if (city != other.city) return false
@@ -59,7 +65,8 @@ data class BicycleSharingSystem(
     }
 
     override fun hashCode(): Int {
-        var result = bssid.hashCode()
+        var result = databaseId ?: 0
+        result = 31 * result + bssid.hashCode()
         result = 31 * result + (brand?.hashCode() ?: 0)
         result = 31 * result + (city?.hashCode() ?: 0)
         result = 31 * result + (country?.hashCode() ?: 0)
