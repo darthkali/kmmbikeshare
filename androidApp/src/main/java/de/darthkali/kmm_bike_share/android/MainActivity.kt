@@ -7,8 +7,8 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.ui.ExperimentalComposeUiApi
 import de.darthkali.kmm_bike_share.di.initKoin
-import de.darthkali.weefood.di.appModule
-import de.darthkali.weefood.navigation.Navigation
+import de.darthkali.kmm_bike_share.android.di.appModule
+import de.darthkali.kmm_bike_share.android.navigation.Navigation
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.android.ext.koin.androidContext
 

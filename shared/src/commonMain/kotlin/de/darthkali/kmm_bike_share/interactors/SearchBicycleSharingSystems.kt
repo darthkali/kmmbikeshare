@@ -1,6 +1,5 @@
-package de.darthkali.kmm_bike_share.interactors.recipe
+package de.darthkali.kmm_bike_share.interactors
 
-import de.darthkali.kmm_bike_share.datasource.network.BicycleSharingSystemNetworkObject
 import de.darthkali.kmm_bike_share.datasource.network.BicycleSharingSystemService
 import de.darthkali.kmm_bike_share.datasource.network.mapper.BicycleSharingSystemNetworkObjectListMapper
 import de.darthkali.kmm_bike_share.domain.model.BicycleSharingSystem
@@ -14,7 +13,7 @@ import org.koin.core.component.inject
 
 class SearchBicycleSharingSystems : KoinComponent {
 
-    private val ingredientService: BicycleSharingSystemService by inject()
+    private val bicycleSharingSystemService: BicycleSharingSystemService by inject()
     private val mapper = BicycleSharingSystemNetworkObjectListMapper()
     private val logger = Logger("SearchBicycleSharingSystems")
 
@@ -35,12 +34,10 @@ class SearchBicycleSharingSystems : KoinComponent {
             emit(DataState.loading())
 
             val ingredientList = mapper.mapTo(
-                ingredientService.searchBicycleSharingSystems(
+                bicycleSharingSystemService.searchBicycleSharingSystems(
                     country = country,
                 )
             )
-
-
             emit(DataState.data(data = ingredientList))
         } catch (e: Exception) {
             logger.log(e.toString())

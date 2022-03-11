@@ -2,7 +2,7 @@ package de.darthkali.kmm_bike_share.di
 
 import de.darthkali.kmm_bike_share.datasource.network.BicycleSharingSystemService
 import de.darthkali.kmm_bike_share.datasource.network.KtorClientFactory
-import de.darthkali.kmm_bike_share.interactors.recipe.SearchBicycleSharingSystems
+import de.darthkali.kmm_bike_share.interactors.SearchBicycleSharingSystems
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
 import org.koin.dsl.KoinAppDeclaration

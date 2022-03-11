@@ -1,4 +1,4 @@
-package de.darthkali.weefood.theme
+package de.darthkali.kmm_bike_share.android.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

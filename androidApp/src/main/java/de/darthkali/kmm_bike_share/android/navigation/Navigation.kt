@@ -1,16 +1,19 @@
-package de.darthkali.weefood.navigation
+package de.darthkali.kmm_bike_share.android.navigation
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
-import de.darthkali.kmm_bike_share.android.navigation.NavigationItem
+import de.darthkali.kmm_bike_share.android.screens.bicycle_sharing_system_detail.BicycleSharingSystemDetailScreen
 import de.darthkali.kmm_bike_share.android.screens.bicycle_sharing_system_list.BicycleSharingSystemListScreen
 import de.darthkali.weefood.screens.ingredient_list.BicycleSharingSystemListViewModel
-import de.darthkali.weefood.screens.week_list.CountryListScreen
+import de.darthkali.kmm_bike_share.android.screens.bicycle_sharing_system_detail.BicycleSharingSystemDetailViewModel
+import de.darthkali.kmm_bike_share.android.screens.country_list.CountryListScreen
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.androidx.compose.getViewModel
 import org.koin.core.parameter.parametersOf
@@ -33,38 +36,55 @@ fun Navigation() {
     NavHost(navController = navController, startDestination = NavigationItem.CountryList.route) {
 
         /**
-         * Navigation -> WeekList
+         * Navigation -> CountryList
          */
         composable(
             route = NavigationItem.CountryList.route
         ) {
-            CountryListScreen()
+            CountryListScreen(navController)
         }
 
 
         /**
-         * Navigation -> IngredientList
+         * Navigation -> BicycleSharingSystemList
          */
         composable(
-            route = NavigationItem.BicycleSharingSystemList.route // + "/{recipeId}",
+            route = NavigationItem.BicycleSharingSystemList.route + "?country={country}",
+            arguments = listOf(
+                navArgument("country") {
+                    type = NavType.StringType
+                }
+            )
+        ) { backStackEntry ->
+            val viewModel = getViewModel<BicycleSharingSystemListViewModel> {
+                parametersOf(backStackEntry.arguments?.getString("country"))
+            }
+
+            BicycleSharingSystemListScreen(
+                bicycleSharingSystemListState = viewModel.state.value,
+                onClickBack =  {navController.navigate(NavigationItem.CountryList.route)}
+            )
+        }
+
+        /**
+         * Navigation -> BicycleSharingSystemDetail
+         */
+        composable(
+            route = NavigationItem.BicycleSharingSystemDetail.route // + "/{recipeId}",
 //            arguments = listOf(
 //                navArgument("recipeId") {
 //                    type = NavType.IntType
 //                }
 //            )
         ) { backStackEntry ->
-            val viewModel = getViewModel<BicycleSharingSystemListViewModel> {
+            val viewModel = getViewModel<BicycleSharingSystemDetailViewModel> {
                 parametersOf("sdf")
 //                parametersOf(backStackEntry.arguments?.getString("recipeId"))
             }
 
-            BicycleSharingSystemListScreen(
-                bicycleSharingSystemListState = viewModel.state.value,
+            BicycleSharingSystemDetailScreen(
+                bicycleSharingSystemDetailState = viewModel.state.value,
             )
         }
-
-
-
-
     }
 }

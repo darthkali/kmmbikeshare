@@ -3,16 +3,15 @@ package de.darthkali.weefood.screens.ingredient_list
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.viewModelScope
-import de.darthkali.kmm_bike_share.datasource.network.mapper.BicycleSharingSystemNetworkObjectListMapper
+import de.darthkali.kmm_bike_share.android.screens.BaseViewModel
 import de.darthkali.kmm_bike_share.domain.model.BicycleSharingSystem
-import de.darthkali.kmm_bike_share.interactors.recipe.SearchBicycleSharingSystems
+import de.darthkali.kmm_bike_share.interactors.SearchBicycleSharingSystems
 import de.darthkali.kmm_bike_share.presentation.ingredient_list.BicycleSharingSystemListEvents
 import de.darthkali.kmm_bike_share.presentation.ingredient_list.BicycleSharingSystemListState
-import de.darthkali.weefood.screens.BaseViewModel
 import org.koin.core.component.inject
 
 class BicycleSharingSystemListViewModel(
-//    country: String
+    country: String
 ) : BaseViewModel() {
 
     private val searchIngredient: SearchBicycleSharingSystems by inject()
@@ -26,7 +25,7 @@ class BicycleSharingSystemListViewModel(
     )
 
     init {
-        state.value = state.value.copy(country = "United Kingdom")
+        state.value = state.value.copy(country = country)
         loadIngredients()
     }
 

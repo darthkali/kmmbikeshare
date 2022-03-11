@@ -1,4 +1,4 @@
-//package de.darthkali.kmm_bike_share.interactors.recipe
+//package de.darthkali.kmm_bike_share.interactors//package de.darthkali.kmm_bike_share.interactors.recipe
 //
 //import de.darthkali.kmm_bike_share.datasource.database.repository.recipe.RecipeRepository
 //import de.darthkali.kmm_bike_share.domain.model.Recipe
@@ -6,7 +6,7 @@
 //import org.koin.core.component.KoinComponent
 //import org.koin.core.component.inject
 //
-//class GetRecipe : KoinComponent {
+//class GetBicycleSharingSystem : KoinComponent {
 //
 //    private val recipeRepository: RecipeRepository by inject()
 ////    private val getIngredientsFromRecipe: GetIngredientsFromRecipe by inject()

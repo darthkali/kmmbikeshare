@@ -1,11 +1,8 @@
 package de.darthkali.kmm_bike_share.datasource.network
 
-import de.darthkali.kmm_bike_share.util.Logger
-import io.ktor.client.request.get
+import io.ktor.client.request.*
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
-import io.ktor.client.request.url
-
 
 class BicycleSharingSystemService : KoinComponent {
     private val ktorClientFactory: KtorClientFactory by inject()
@@ -14,8 +11,6 @@ class BicycleSharingSystemService : KoinComponent {
     suspend fun searchBicycleSharingSystems(
         country: String
     ): List<BicycleSharingSystemNetworkObject> {
-
-        println("Start Network connection")
         return httpClient.get {
             url(
                 BASE_URL +

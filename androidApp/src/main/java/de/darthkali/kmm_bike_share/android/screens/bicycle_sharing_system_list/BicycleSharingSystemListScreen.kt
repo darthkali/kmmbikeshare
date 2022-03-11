@@ -14,8 +14,8 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import de.darthkali.kmm_bike_share.android.navigation.TopBar
 import de.darthkali.kmm_bike_share.presentation.ingredient_list.BicycleSharingSystemListState
-import de.darthkali.weefood.navigation.TopBar
 import de.darthkali.weefood.theme.AppTheme
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
@@ -27,9 +27,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 @Composable
 fun BicycleSharingSystemListScreen(
     bicycleSharingSystemListState: BicycleSharingSystemListState,
-//    onTriggerEvent: (BicycleSharingSystemListEvents) -> Unit,
-//    onClickSaveIngredient: (Int?) -> Unit,
-//    onClickBack: (Int?) -> Unit,
+    onClickBack: () -> Unit,
 ) {
 
     AppTheme(
@@ -41,7 +39,7 @@ fun BicycleSharingSystemListScreen(
                     title = bicycleSharingSystemListState.country,
                     navigationIcon = Icons.Filled.ArrowBack,
                     navigationIconClickAction = {
-//                        onClickBack(bicycleSharingSystemListState.recipeId)
+                        onClickBack()
                     },
                 )
             },
