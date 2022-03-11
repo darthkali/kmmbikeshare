@@ -1,7 +1,9 @@
 plugins {
-    kotlin("multiplatform")
-    kotlin("native.cocoapods")
-    id("com.android.library")
+    kotlin(KotlinPlugins.multiplatform)
+    kotlin(KotlinPlugins.cocoapods)
+    kotlin(KotlinPlugins.serialization) version Kotlin.version
+    id(Plugins.androidLibrary)
+    id(Plugins.sqlDelight)
 }
 
 version = "1.0"
@@ -23,14 +25,57 @@ kotlin {
     }
     
     sourceSets {
-        val commonMain by getting
-        val commonTest by getting {
+        // Common ----------
+        val commonMain by getting{
             dependencies {
-                implementation(kotlin("test"))
+                implementation(Ktor.core)
+                implementation(Ktor.clientSerialization)
+                implementation(Kotlin.annotations)
+                implementation(Kotlinx.datetime)
+                implementation(Kotlinx.common)
+                implementation(Kotlinx.serialization)
+                implementation(SQLDelight.runtime)
+                implementation(Koin.core)
+                implementation(Koin.test)
             }
         }
-        val androidMain by getting
-        val androidTest by getting
+        val commonTest by getting {
+            dependencies {
+                implementation(Kotlin.commonTest)
+                implementation(Kotlin.annotations)
+                implementation(Koin.test)
+            }
+        }
+
+        // Android ----------
+        val androidMain by getting{
+            dependencies {
+                implementation(Ktor.android)
+                implementation(SQLDelight.androidDriver)
+                implementation(Kotlinx.android)
+                implementation(Koin.test)
+                implementation(Koin.testJunit4)
+            }
+        }
+
+        val androidTest by getting {
+            dependencies {
+                implementation(Kotlin.jvm)
+                implementation(Kotlin.junit)
+                implementation(Ktor.android)
+                implementation(SQLDelight.androidDriver)
+                implementation(AndroidXTest.core)
+                implementation(AndroidXTest.junit)
+                implementation(AndroidXTest.runner)
+                implementation(AndroidXTest.rules)
+                implementation(Kotlinx.test)
+                implementation(Robolectric.robolectric)
+                implementation(Koin.android)
+            }
+        }
+
+
+        // iOS ----------
         val iosX64Main by getting
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
@@ -39,6 +84,18 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+
+            dependencies {
+                implementation(Ktor.ios)
+                implementation(SQLDelight.nativeDriver)
+                implementation(Koin.core)
+                implementation(Koin.test)
+                implementation(Kotlinx.common) {
+                    version {
+                        strictly(Kotlinx.coroutines)
+                    }
+                }
+            }
         }
         val iosX64Test by getting
         val iosArm64Test by getting
@@ -53,10 +110,17 @@ kotlin {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = Application.compileSdk
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdk = 21
-        targetSdk = 32
+        minSdk = Application.minSdk
+        targetSdk = Application.targetSdk
+    }
+}
+
+sqldelight {
+    database("KmmBikeShareDatabase") {
+        packageName = "de.darthkali.kmm_bike_share.datasource.database"
+        sourceFolders = listOf("sqldelight")
     }
 }
