@@ -2,7 +2,6 @@ package de.darthkali.kmm_bike_share.datasource.network.mapper
 
 import de.darthkali.kmm_bike_share.datasource.BaseMapper
 import de.darthkali.kmm_bike_share.datasource.network.model.IngredientDto
-import de.darthkali.kmm_bike_share.domain.model.Ingredient
 
 class IngredientListMapper : BaseMapper<List<Ingredient>, List<IngredientDto>> {
 

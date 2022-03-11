@@ -1,24 +1,26 @@
 package de.darthkali.kmm_bike_share.domain.model
 
-data class Recipe(
+data class BicycleSharingSystem(
     var databaseId: Int? = null,
-    var name: String,
-    var image: String? = "",
-    var cooking_time: Int? = 0,
-    var cooking_time_unit: String,
-    var recipeDescription: String? = "",
-    var portion: Int? = 0,
+    var bssid: String,
+    var brand: String? = "",
+    var city: String? = "",
+    var country: String? = "",
+    var site: String? = "",
+    var electric: String? = "no",
+    var currently_active: String? = "no",
 ) {
+
     override fun toString(): String {
         return StringBuilder()
             .append("|databaseId: ")
             .append(this.databaseId)
-            .append("| name: ")
-            .append(this.name)
-            .append("| image: ")
-            .append(this.image)
-            .append("| cooking_time: ")
-            .append(this.cooking_time)
+            .append("| bssid: ")
+            .append(this.bssid)
+            .append("| brand: ")
+            .append(this.brand)
+            .append("| city: ")
+            .append(this.city)
             .append("| unit: ")
             .append(this.cooking_time_unit)
             .append("| description: ")
@@ -48,13 +50,13 @@ data class Recipe(
         }
 
         return (
-            (other is Recipe) &&
-                other.name == this.name &&
-                other.image == this.image
-            ) &&
-            other.cooking_time == this.cooking_time &&
-            other.cooking_time_unit == this.cooking_time_unit &&
-            other.recipeDescription == this.recipeDescription
+                (other is Recipe) &&
+                        other.name == this.name &&
+                        other.image == this.image
+                ) &&
+                other.cooking_time == this.cooking_time &&
+                other.cooking_time_unit == this.cooking_time_unit &&
+                other.recipeDescription == this.recipeDescription
 //                && other.portion == this.portion
 //                && other.ingredients.hashCode() == this.ingredients.hashCode()
     }
@@ -70,13 +72,13 @@ data class Recipe(
     }
 
     fun isRecipeEmpty(): Boolean {
-        return(
-            name == "" &&
-                image == "" &&
-                cooking_time == 0 &&
-                cooking_time_unit == "" &&
-                recipeDescription == "" &&
-                portion == 0
-            )
+        return (
+                name == "" &&
+                        image == "" &&
+                        cooking_time == 0 &&
+                        cooking_time_unit == "" &&
+                        recipeDescription == "" &&
+                        portion == 0
+                )
     }
 }
