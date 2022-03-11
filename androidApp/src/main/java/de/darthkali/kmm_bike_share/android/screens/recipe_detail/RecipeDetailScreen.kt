@@ -25,7 +25,7 @@
 //import androidx.compose.ui.unit.dp
 //import androidx.navigation.NavController
 //import de.darthkali.weefood.domain.model.Recipe
-//import de.darthkali.weefood.navigation.NavigationItem
+//import de.darthkali.kmm_bike_share.android.navigation.NavigationItem
 //import de.darthkali.weefood.navigation.TopBar
 //import de.darthkali.weefood.presentation.recipe_detail.RecipeDetailEvents
 //import de.darthkali.weefood.presentation.recipe_detail.RecipeDetailState

@@ -1,5 +1,6 @@
 package de.darthkali.kmm_bike_share.datasource.network
 
+import de.darthkali.kmm_bike_share.util.Logger
 import io.ktor.client.request.get
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
@@ -11,12 +12,15 @@ class BicycleSharingSystemService : KoinComponent {
     private val httpClient = ktorClientFactory.build()
 
     suspend fun searchBicycleSharingSystems(
-//        query: String
+        country: String
     ): List<BicycleSharingSystemNetworkObject> {
+
+        println("Start Network connection")
         return httpClient.get {
             url(
                 BASE_URL +
-                        "/categories/base/fields/brand,city,country,electric,site,currently_active/locations/Germany/"
+                        "/categories/base/fields/brand,city,country,electric,site,currently_active/locations/" +
+                        country
             )
         }
     }
