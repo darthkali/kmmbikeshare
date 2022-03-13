@@ -2,6 +2,7 @@ package de.darthkali.kmm_bike_share.android.screens.bicycle_sharing_system_list
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Card
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.MaterialTheme.typography
 import androidx.compose.material.Text
@@ -12,11 +13,12 @@ import androidx.compose.ui.unit.dp
 import de.darthkali.kmm_bike_share.domain.model.BicycleSharingSystem
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
+@ExperimentalMaterialApi
 @ExperimentalCoroutinesApi
 @Composable
 fun BicycleSharingSystemCard(
     bicycleSharingSystem: BicycleSharingSystem,
-//    onSaveIngredient: (Ingredient) -> Unit
+    onOpenBicycleSharingSystem: (String) -> Unit
 ) {
     Card(
         shape = MaterialTheme.shapes.small,
@@ -29,13 +31,13 @@ fun BicycleSharingSystemCard(
             )
             .fillMaxWidth(),
         elevation = 8.dp,
-        backgroundColor = MaterialTheme.colors.surface
+        backgroundColor = MaterialTheme.colors.surface,
+        onClick = { onOpenBicycleSharingSystem(bicycleSharingSystem.bssid) }
     ) {
         Column() {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
-                    text = bicycleSharingSystem.brand
-                        ?: "", // if ingredient.name == null, then set "" as text
+                    text = bicycleSharingSystem.brand ?: "",
                     modifier = Modifier
                         .fillMaxWidth(0.85f)
                         .wrapContentWidth(Alignment.Start),
@@ -45,8 +47,7 @@ fun BicycleSharingSystemCard(
             Row(verticalAlignment = Alignment.CenterVertically)
             {
                 Text(
-                    text = bicycleSharingSystem.city
-                        ?: "", // if ingredient.name == null, then set "" as text
+                    text = bicycleSharingSystem.city ?: "",
                     modifier = Modifier
                         .fillMaxWidth(0.85f)
                         .wrapContentWidth(Alignment.Start),
@@ -56,22 +57,3 @@ fun BicycleSharingSystemCard(
         }
     }
 }
-
-// @ExperimentalCoroutinesApi
-// @ExperimentalMaterialApi
-// @ExperimentalComposeUiApi
-// @Preview(showBackground = true)
-// @Composable
-// fun UserProfileDetailsPreview() {
-//    val apple = Ingredient(
-//        id = 1,
-//        name = "Apfel",
-//        image = "apple.img",
-// //        aisle = "meat",
-// //        possibleUnits = listOf(),
-//    )
-//    AppTheme() {
-//        IngredientCard(ingredient = apple)
-//    }
-//
-// }

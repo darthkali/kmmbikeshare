@@ -1,4 +1,4 @@
-package de.darthkali.weefood.screens.ingredient_list
+package de.darthkali.kmm_bike_share.android.screens.bicycle_sharing_system_list
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
@@ -8,6 +8,7 @@ import de.darthkali.kmm_bike_share.domain.model.BicycleSharingSystem
 import de.darthkali.kmm_bike_share.interactors.SearchBicycleSharingSystems
 import de.darthkali.kmm_bike_share.presentation.ingredient_list.BicycleSharingSystemListEvents
 import de.darthkali.kmm_bike_share.presentation.ingredient_list.BicycleSharingSystemListState
+import de.darthkali.kmm_bike_share.util.Logger
 import org.koin.core.component.inject
 
 class BicycleSharingSystemListViewModel(
@@ -15,9 +16,7 @@ class BicycleSharingSystemListViewModel(
 ) : BaseViewModel() {
 
     private val searchIngredient: SearchBicycleSharingSystems by inject()
-
-    //    private val saveIngredient: SaveIngredient by inject()
-//    private val logger = Logger("IngredientListViewModel")
+    private val logger = Logger("BicycleSharingSystemListViewModel")
 
 
     val state: MutableState<BicycleSharingSystemListState> = mutableStateOf(
@@ -26,49 +25,44 @@ class BicycleSharingSystemListViewModel(
 
     init {
         state.value = state.value.copy(country = country)
-        loadIngredients()
+        this.loadBicycleSharingSystem()
     }
 
     fun onTriggerEvent(event: BicycleSharingSystemListEvents) {
         when (event) {
-//            BicycleSharingSystemListEvents.LoadIngredient -> {
-//                loadIngredients()
-//            }
-//            is BicycleSharingSystemListEvents.SaveIngredient -> {
-//                saveIngredient(event.ingredient)
-//            }
-//            is BicycleSharingSystemListEvents.OnUpdateQuery -> {
-//                state.value = state.value.copy(query = event.query)
-//            }
-//            else -> {
-//                logger.log("Something went wrong.")
-//            }
+            BicycleSharingSystemListEvents.LoadBicycleSharingSystem -> {
+                this.loadBicycleSharingSystem()
+            }
+            BicycleSharingSystemListEvents.SaveAllBicycleSharingSystems -> {
+                saveAllBicycleSharingSystems(state.value.bicycleSharingSystems)
+            }
+            else -> {
+                logger.log("Something went wrong.")
+            }
         }
     }
 
-//    private fun saveIngredient(ingredient: Ingredient) {
-//        saveIngredient.execute(ingredient, state.value.recipeId).let {
-//            logger.log("Ingredients ID was: $it")
-//        }
-//    }
+    private fun saveAllBicycleSharingSystems(bicycleSharingSystems: List<BicycleSharingSystem>) {
 
-    private fun loadIngredients() {
+    }
+
+    private fun loadBicycleSharingSystem() {
         searchIngredient.execute(
             country = state.value.country,
         ).collectCommon(viewModelScope) { dataState ->
             state.value = state.value.copy(isLoading = dataState.isLoading)
 
-            dataState.data?.let { ingredients ->
-                appendIngredients(ingredients)
+            dataState.data?.let { bicycleSharingSystems ->
+                appendBicycleSharingSystem(bicycleSharingSystems)
+                saveAllBicycleSharingSystems(bicycleSharingSystems)
             }
         }
 
-
     }
 
-    private fun appendIngredients(ingredients: List<BicycleSharingSystem>) {
+    private fun appendBicycleSharingSystem(bicycleSharingSystems: List<BicycleSharingSystem>) {
         val curr = ArrayList(state.value.bicycleSharingSystems)
-        curr.addAll(ingredients)
+        curr.addAll(bicycleSharingSystems)
         state.value = state.value.copy(bicycleSharingSystems = curr)
     }
 }

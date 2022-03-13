@@ -7,7 +7,10 @@
     <application
         android:allowBackup="false"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:configChanges="orientation"
+        android:label="KMM Bike Share"
+        android:dataExtractionRules="@xml/data_extraction_rules">
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -17,4 +20,4 @@
             </intent-filter>
         </activity>
     </application>
-</manifest> 
+</manifest>

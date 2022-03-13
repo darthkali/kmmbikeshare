@@ -11,7 +11,7 @@ import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
 import de.darthkali.kmm_bike_share.android.screens.bicycle_sharing_system_detail.BicycleSharingSystemDetailScreen
 import de.darthkali.kmm_bike_share.android.screens.bicycle_sharing_system_list.BicycleSharingSystemListScreen
-import de.darthkali.weefood.screens.ingredient_list.BicycleSharingSystemListViewModel
+import de.darthkali.kmm_bike_share.android.screens.bicycle_sharing_system_list.BicycleSharingSystemListViewModel
 import de.darthkali.kmm_bike_share.android.screens.bicycle_sharing_system_detail.BicycleSharingSystemDetailViewModel
 import de.darthkali.kmm_bike_share.android.screens.country_list.CountryListScreen
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -62,7 +62,10 @@ fun Navigation() {
 
             BicycleSharingSystemListScreen(
                 bicycleSharingSystemListState = viewModel.state.value,
-                onClickBack =  {navController.navigate(NavigationItem.CountryList.route)}
+                onClickBack = { navController.navigate(NavigationItem.CountryList.route) },
+                onOpenBicycleSharingSystem = { bssid ->
+                    navController.navigate("${NavigationItem.BicycleSharingSystemDetail.route}?bssid=$bssid")
+                },
             )
         }
 
@@ -70,7 +73,7 @@ fun Navigation() {
          * Navigation -> BicycleSharingSystemDetail
          */
         composable(
-            route = NavigationItem.BicycleSharingSystemDetail.route // + "/{recipeId}",
+            route = NavigationItem.BicycleSharingSystemDetail.route + "?bssid={bssid}",
 //            arguments = listOf(
 //                navArgument("recipeId") {
 //                    type = NavType.IntType

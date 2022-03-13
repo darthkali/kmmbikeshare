@@ -2,10 +2,14 @@
 -- Table
 -- -----------------------------------------------------
 CREATE TABLE bike_share_Entity(
-    id      INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    name    TEXT    NOT NULL,
-    image   TEXT    NOT NULL,
-    apiId   INTEGER    NOT NULL
+   id                   INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+   bssid                TEXT    NOT NULL,
+   brand                TEXT,
+   city                 TEXT,
+   country              TEXT,
+   site                 TEXT,
+   electric             TEXT,
+   currently_active     TEXT
 );
 
 -- -----------------------------------------------------
@@ -16,32 +20,25 @@ CREATE TABLE bike_share_Entity(
 -- INSERT
 -- -----------------------------------------------------
 insertBikeShare:
-INSERT INTO bike_share_Entity(id,name, image, apiId)
-SELECT ?, ?, ?, ?;
+INSERT INTO bike_share_Entity(bssid,brand,city,country,site, electric, currently_active)
+SELECT ?, ?, ?, ?, ?, ?, ?;
 
 
 -- -----------------------------------------------------
 -- READ
 -- -----------------------------------------------------
 getAllBikeShares:
-SELECT * FROM bike_share_Entity
-LIMIT :pageSize
-OFFSET :offset;
+SELECT * FROM bike_share_Entity;
 
 getBikeShareById:
 SELECT * FROM bike_share_Entity
 WHERE id = :id;
 
 
-getBikeShareByApiId:
+getBikeShareByBssid:
 SELECT * FROM bike_share_Entity
-WHERE apiId = :apiId;
+WHERE bssid = :bssid;
 
-searchBikeShares:
-SELECT * FROM bike_share_Entity
-WHERE name LIKE ('%' || :query || '%')
-LIMIT :pageSize
-OFFSET :offset;
 
 getLastInsertRowId:
 SELECT last_insert_rowid();
@@ -52,8 +49,8 @@ SELECT last_insert_rowid();
 -- -----------------------------------------------------
 updateBikeShare:
 UPDATE bike_share_Entity
-SET name = ?, image = ?
-WHERE apiId = ?;
+SET bssid = ?,brand = ?,city = ?,country = ?,site = ?, electric = ?, currently_active = ?
+WHERE bssid = ?;
 
 
 -- -----------------------------------------------------

@@ -27,6 +27,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 @Composable
 fun BicycleSharingSystemListScreen(
     bicycleSharingSystemListState: BicycleSharingSystemListState,
+    onOpenBicycleSharingSystem: (String) -> Unit,
     onClickBack: () -> Unit,
 ) {
 
@@ -56,10 +57,10 @@ fun BicycleSharingSystemListScreen(
                         LazyColumn {
                             itemsIndexed(
                                 items = bicycleSharingSystemListState.bicycleSharingSystems
-                            ) { index, ingredient ->
+                            ) { index, bicycleSharingSystem ->
                                 BicycleSharingSystemCard(
-                                    bicycleSharingSystem = ingredient,
-//                                    onSaveIngredient = { onSaveIngredient(it) }
+                                    bicycleSharingSystem = bicycleSharingSystem,
+                                    onOpenBicycleSharingSystem = onOpenBicycleSharingSystem
                                 )
                             }
                         }

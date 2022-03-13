@@ -1,5 +1,7 @@
 package de.darthkali.kmm_bike_share.di
 
+import de.darthkali.kmm_bike_share.datasource.database.BicycleSharingSystemRepository
+import de.darthkali.kmm_bike_share.datasource.database.KmmBikeShareDatabase
 import de.darthkali.kmm_bike_share.datasource.network.BicycleSharingSystemService
 import de.darthkali.kmm_bike_share.datasource.network.KtorClientFactory
 import de.darthkali.kmm_bike_share.interactors.SearchBicycleSharingSystems
@@ -14,7 +16,7 @@ fun initKoin(appDeclaration: KoinAppDeclaration = {}) =
         modules(
             platformModule(),
             network,
-//            database,
+            database,
             interactor
         )
     }
@@ -29,13 +31,10 @@ val network = module {
     single { BicycleSharingSystemService() }
 }
 
-//val database = module {
-//    single { KmmBikeShareDatabase(get()) }
-////    single<IngredientRepository> { IngredientRepositoryImpl() }
-//    single<RecipeRepository> { RecipeRepositoryImpl() }
-////    single<RecipeIngredientRepository> { RecipeIngredientRepositoryImpl() }
-////    single<WeekRecipeRepository> { WeekRecipeRepositoryImpl() }
-//}
+val database = module {
+    single { KmmBikeShareDatabase(get()) }
+    single { BicycleSharingSystemRepository() }
+}
 
 val interactor = module {
     single { SearchBicycleSharingSystems() }

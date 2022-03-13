@@ -1,6 +1,6 @@
+
+
 plugins {
-//    id("com.android.application")
-//    kotlin("android")
     id(Plugins.androidApplication)
     kotlin(KotlinPlugins.android)
     kotlin(KotlinPlugins.kapt)
@@ -8,13 +8,15 @@ plugins {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = Application.compileSdk
     defaultConfig {
-        applicationId = "de.darthkali.kmm_bike_share.android"
-        minSdk = 21
-        targetSdk = 32
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = Application.appId
+        minSdk = Application.minSdk
+        targetSdk = Application.targetSdk
+        versionCode = Application.versionCode
+        versionName = Application.versionName
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         getByName("release") {
@@ -38,6 +40,14 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = Compose.composeVersion
     }
+
+    packagingOptions {
+        exclude("META-INF/*")
+    }
+
+
+
+
 }
 
 dependencies {
