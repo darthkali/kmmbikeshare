@@ -1,4 +1,4 @@
-package de.darthkali.weefood.theme
+package de.darthkali.kmm_bike_share.android.theme
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -10,10 +10,6 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
-import de.darthkali.kmm_bike_share.android.theme.AppShapes
-import de.darthkali.kmm_bike_share.android.theme.DarkColors
-import de.darthkali.kmm_bike_share.android.theme.LightColors
-import de.darthkali.kmm_bike_share.android.theme.MontserratTypography
 
 @ExperimentalComposeUiApi
 @ExperimentalMaterialApi

@@ -12,6 +12,7 @@ import org.junit.Rule
 import org.junit.runner.RunWith
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
+import org.koin.core.logger.Level
 import org.koin.test.KoinTest
 import org.koin.test.KoinTestRule
 
@@ -20,8 +21,8 @@ actual abstract class BaseTest : KoinTest {
 
     @get:Rule
     val koinTestRule = KoinTestRule.create {
+        androidLogger(if (BuildConfig.DEBUG) Level.ERROR else Level.NONE)
         androidContext(ApplicationProvider.getApplicationContext())
-        androidLogger()
         modules(
             platformModule(),
             network,

@@ -15,7 +15,7 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import de.darthkali.kmm_bike_share.presentation.recipe_list.BicycleSharingSystemDetailState
 import de.darthkali.kmm_bike_share.android.navigation.TopBar
-import de.darthkali.weefood.theme.AppTheme
+import de.darthkali.kmm_bike_share.android.theme.AppTheme
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 @ExperimentalCoroutinesApi

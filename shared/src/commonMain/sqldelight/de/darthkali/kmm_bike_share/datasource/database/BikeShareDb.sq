@@ -20,8 +20,8 @@ CREATE TABLE bike_share_Entity(
 -- INSERT
 -- -----------------------------------------------------
 insertBikeShare:
-INSERT INTO bike_share_Entity(bssid,brand,city,country,site, electric, currently_active)
-SELECT ?, ?, ?, ?, ?, ?, ?;
+INSERT INTO bike_share_Entity(id, bssid,brand,city,country,site, electric, currently_active)
+SELECT ?, ?, ?, ?, ?, ?, ?, ?;
 
 
 -- -----------------------------------------------------
@@ -49,7 +49,7 @@ SELECT last_insert_rowid();
 -- -----------------------------------------------------
 updateBikeShare:
 UPDATE bike_share_Entity
-SET bssid = ?,brand = ?,city = ?,country = ?,site = ?, electric = ?, currently_active = ?
+SET brand = ?,city = ?,country = ?,site = ?, electric = ?, currently_active = ?
 WHERE bssid = ?;
 
 

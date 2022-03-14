@@ -13,13 +13,20 @@ class BicycleSharingSystemRepositoryTest : BaseTest() {
     @BeforeTest
     fun setup() = runTest {
         writeHead("setup")
-        bicycleSharingSystemRepository.deleteAllBicycleSharingSystems()
-        val bicycleSharingSystems = BicycleSharingSystemMock.bicycleSharingSystemDbList
-
-        for (bicycleSharingSystem in bicycleSharingSystems) {
-            bicycleSharingSystemRepository.insertBicycleSharingSystem(bicycleSharingSystem)
-        }
+        bicycleSharingSystemRepository.getAllBicycleSharingSystems()
+//        bicycleSharingSystemRepository.deleteAllBicycleSharingSystems()
+//        val bicycleSharingSystems = BicycleSharingSystemMock.bicycleSharingSystemDbList
+//
+//        for (bicycleSharingSystem in bicycleSharingSystems) {
+//            bicycleSharingSystemRepository.insertBicycleSharingSystem(bicycleSharingSystem)
+//        }
     }
+
+    @Test
+    fun test() = runTest {
+        println("test")
+    }
+
 
     @Test
     fun insert_bicycleSharingSystem_success() = runTest {

@@ -1,8 +1,5 @@
 package de.darthkali.kmm_bike_share.datasource.database
 
-import de.darthkali.kmm_bike_share.datasource.database.KmmBikeShareDatabaseWrapper
-import de.darthkali.kmm_bike_share.datasource.database.model.BicycleSharingSystemDb
-import de.darthkali.kmm_bike_share.domain.model.BicycleSharingSystem
 import de.darthkali.kmm_bike_share.util.Logger
 import de.darthkali.kmmbikeshare.datasource.database.Bike_share_Entity
 import org.koin.core.component.KoinComponent
@@ -31,6 +28,7 @@ class BicycleSharingSystemRepository : KoinComponent {
     fun insertBicycleSharingSystem(bicycleSharingSystem: BicycleSharingSystemDb): Int? {
         return try {
             bicycleSharingSystemDatabaseQueries.insertBikeShare(
+                id =  null,
                 bssid = bicycleSharingSystem.bssid,
                 brand = bicycleSharingSystem.brand,
                 city = bicycleSharingSystem.city,

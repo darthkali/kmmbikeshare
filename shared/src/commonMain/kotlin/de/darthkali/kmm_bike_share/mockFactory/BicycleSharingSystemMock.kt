@@ -1,6 +1,6 @@
 package de.darthkali.kmm_bike_share.mockFactory
 
-import de.darthkali.kmm_bike_share.datasource.database.model.BicycleSharingSystemDb
+import de.darthkali.kmm_bike_share.datasource.database.BicycleSharingSystemDb
 
 object BicycleSharingSystemMock {
 

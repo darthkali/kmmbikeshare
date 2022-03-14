@@ -1,6 +1,4 @@
-package de.darthkali.kmm_bike_share.datasource.database.model
-
-import de.darthkali.kmm_bike_share.domain.model.BicycleSharingSystem
+package de.darthkali.kmm_bike_share.datasource.database
 
 data class BicycleSharingSystemDb(
     var databaseId: Int? = null,

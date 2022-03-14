@@ -14,6 +14,8 @@ kotlin {
     iosArm64()
     iosSimulatorArm64()
 
+
+
     cocoapods {
         summary = "Some description for the Shared Module"
         homepage = "Link to the Shared Module homepage"
@@ -25,6 +27,15 @@ kotlin {
     }
     
     sourceSets {
+//        all {
+//            languageSettings.apply {
+//                optIn("kotlin.RequiresOptIn")
+//                optIn("kotlinx.coroutines.ExperimentalCoroutinesApi")
+//            }
+//        }
+
+
+
         // Common ----------
         val commonMain by getting{
             dependencies {
@@ -122,7 +133,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-
 
 
 

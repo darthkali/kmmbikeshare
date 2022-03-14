@@ -8,7 +8,7 @@ import org.koin.dsl.module
 actual fun platformModule() = module {
     single {
         val driver =
-            AndroidSqliteDriver(KmmBikeShareDatabase.Schema, get(), "weeFoodDatabase.db")
+            AndroidSqliteDriver(KmmBikeShareDatabase.Schema, get(), "BikeShareDb.db")
         KmmBikeShareDatabaseWrapper(KmmBikeShareDatabase(driver))
     }
 }
