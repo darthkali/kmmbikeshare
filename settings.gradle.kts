@@ -6,6 +6,6 @@ pluginManagement {
     }
 }
 
-rootProject.name = "kmm_bike_share"
+rootProject.name = "kmmbikeshare"
 include(":androidApp")
 include(":shared")

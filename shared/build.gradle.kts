@@ -140,7 +140,7 @@ android {
 
 sqldelight {
     database("KmmBikeShareDatabase") {
-        packageName = "de.darthkali.kmm_bike_share.datasource.database"
+        packageName = "de.darthkali.kmmbikeshare.datasource.database"
         sourceFolders = listOf("sqldelight")
     }
 }
