@@ -7,5 +7,5 @@ import org.koin.dsl.module
 
 val appModule = module {
     viewModel { BicycleSharingSystemListViewModel(get()) }
-    viewModel { BicycleSharingSystemDetailViewModel() }
+    viewModel { BicycleSharingSystemDetailViewModel(get()) }
 }

@@ -5,12 +5,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:allowBackup="false"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:configChanges="orientation"
-        android:label="KMM Bike Share"
-        android:dataExtractionRules="@xml/data_extraction_rules">
+        android:label="KMM Bike Share">
         <activity
             android:name=".MainActivity"
             android:exported="true">

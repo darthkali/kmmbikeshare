@@ -50,7 +50,6 @@ data class BicycleSharingSystemDb(
 
         other as BicycleSharingSystemDb
 
-        if (databaseId != other.databaseId) return false
         if (bssid != other.bssid) return false
         if (brand != other.brand) return false
         if (city != other.city) return false

@@ -74,19 +74,21 @@ fun Navigation() {
          */
         composable(
             route = NavigationItem.BicycleSharingSystemDetail.route + "?bssid={bssid}",
-//            arguments = listOf(
-//                navArgument("recipeId") {
-//                    type = NavType.IntType
-//                }
-//            )
+            arguments = listOf(
+                navArgument("bssid") {
+                    type = NavType.StringType
+                }
+            )
         ) { backStackEntry ->
             val viewModel = getViewModel<BicycleSharingSystemDetailViewModel> {
-                parametersOf("sdf")
-//                parametersOf(backStackEntry.arguments?.getString("recipeId"))
+                parametersOf(backStackEntry.arguments?.getString("bssid"))
             }
 
             BicycleSharingSystemDetailScreen(
                 bicycleSharingSystemDetailState = viewModel.state.value,
+                onClickBack = { country ->
+                    navController.navigate("${NavigationItem.BicycleSharingSystemList.route}?country=$country")
+                },
             )
         }
     }

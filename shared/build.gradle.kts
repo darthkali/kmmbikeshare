@@ -134,7 +134,14 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
-
+//    configurations {
+//        create("androidTestApi")
+//        create("androidTestDebugApi")
+//        create("androidTestReleaseApi")
+//        create("testApi")
+//        create("testDebugApi")
+//        create("testReleaseApi")
+//    }
 
 }
 

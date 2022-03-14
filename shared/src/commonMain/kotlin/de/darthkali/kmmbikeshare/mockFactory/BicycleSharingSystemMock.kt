@@ -17,15 +17,6 @@ object BicycleSharingSystemMock {
 
     val bicycleSharingSystemDbList = listOf(
         BicycleSharingSystemDb(
-            bssid = "london",
-            brand = "Santander Cycles",
-            city = "London",
-            country = "United Kingdom",
-            site = "https://tfl.gov.uk/modes/cycling/santander-cycles",
-            electric = "no",
-            currently_active = "yes"
-        ),
-        BicycleSharingSystemDb(
             bssid = "belfast",
             brand = "Belfast Bikes",
             city = "Belfast",
@@ -109,6 +100,17 @@ object BicycleSharingSystemMock {
             currently_active = "yes"
 
         ),
+    )
+
+    const val bicycleSharingSystemDbUpdateIndex = 2
+    val bicycleSharingSystemDbUpdate = BicycleSharingSystemDb(
+        bssid = bicycleSharingSystemDbList[bicycleSharingSystemDbUpdateIndex].bssid,
+        brand = "${bicycleSharingSystemDbList[bicycleSharingSystemDbUpdateIndex].brand} update",
+        city = "${bicycleSharingSystemDbList[bicycleSharingSystemDbUpdateIndex].city} update",
+        country = "${bicycleSharingSystemDbList[bicycleSharingSystemDbUpdateIndex].country} update",
+        site = "${bicycleSharingSystemDbList[bicycleSharingSystemDbUpdateIndex].site} update",
+        electric = "${bicycleSharingSystemDbList[bicycleSharingSystemDbUpdateIndex].electric} update",
+        currently_active = "${bicycleSharingSystemDbList[bicycleSharingSystemDbUpdateIndex].currently_active} update",
     )
 }
 

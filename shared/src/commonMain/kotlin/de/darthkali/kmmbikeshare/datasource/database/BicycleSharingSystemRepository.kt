@@ -28,7 +28,7 @@ class BicycleSharingSystemRepository : KoinComponent {
     fun insertBicycleSharingSystem(bicycleSharingSystem: BicycleSharingSystemDb): Int? {
         return try {
             bicycleSharingSystemDatabaseQueries.insertBikeShare(
-                id =  null,
+                id = null,
                 bssid = bicycleSharingSystem.bssid,
                 brand = bicycleSharingSystem.brand,
                 city = bicycleSharingSystem.city,
@@ -57,17 +57,62 @@ class BicycleSharingSystemRepository : KoinComponent {
         }
     }
 
-//    fun getBicycleSharingSystemById(id: Any): Any {
-//
-//    }
 
-//    fun deleteBicycleSharingSystemById(bicycleSharingSystemId: Any) {
-//
-//    }
+    fun getBicycleSharingSystemById(bicycleSharingSystemId: Int): BicycleSharingSystemDb? {
+        return try {
+            logger.log("Get BicycleSharingSystemDb from database by ID")
+            bicycleSharingSystemDatabaseQueries.getBikeShareById(
+                id = bicycleSharingSystemId.toLong()
+            ).executeAsOne().toBicycleSharingSystemDb()
+        } catch (e: Exception) {
+            logger.log(e.toString())
+            null
+        }
+    }
 
-//    fun updateBicycleSharingSystemByBssid(bicycleSharingSystemDbUpdate: Any) {
-//
-//    }
+    fun getBicycleSharingSystemByBssid(bssid: String): BicycleSharingSystemDb? {
+        return try {
+            logger.log("Get Ingredient from database by ApiID")
+            bicycleSharingSystemDatabaseQueries.getBikeShareByBssid(
+                bssid = bssid
+            ).executeAsOne().toBicycleSharingSystemDb()
+        } catch (e: Exception) {
+            logger.log(e.toString())
+            null
+        }
+    }
+
+    fun deleteBicycleSharingSystemById(bicycleSharingSystemId: Int): Boolean {
+        return try {
+            logger.log("Delete Ingredient from database by ID")
+            bicycleSharingSystemDatabaseQueries.deleteBikeShareById(id = bicycleSharingSystemId.toLong())
+            true
+        } catch (e: Exception) {
+            logger.log(e.toString())
+            false
+        }
+    }
+
+
+    fun updateBicycleSharingSystemByBssid(bicycleSharingSystemDbUpdate: BicycleSharingSystemDb): Int? {
+        return try {
+            bicycleSharingSystemDatabaseQueries.updateBikeShare(
+                brand = bicycleSharingSystemDbUpdate.brand,
+                city = bicycleSharingSystemDbUpdate.city,
+                country = bicycleSharingSystemDbUpdate.country,
+                site = bicycleSharingSystemDbUpdate.site,
+                electric = bicycleSharingSystemDbUpdate.electric,
+                currently_active = bicycleSharingSystemDbUpdate.currently_active,
+                bssid = bicycleSharingSystemDbUpdate.bssid
+            )
+            logger.log("Updated ${bicycleSharingSystemDbUpdate.brand} in database")
+            bicycleSharingSystemDatabaseQueries.getBikeShareByBssid(bicycleSharingSystemDbUpdate.bssid)
+                .executeAsOne().id.toInt()
+        } catch (e: Exception) {
+            logger.log(e.toString())
+            null
+        }
+    }
 
 
     fun Bike_share_Entity.toBicycleSharingSystemDb(): BicycleSharingSystemDb {
@@ -83,8 +128,10 @@ class BicycleSharingSystemRepository : KoinComponent {
         )
     }
 
+
     fun List<Bike_share_Entity>.toBicycleSharingSystemDbList(): List<BicycleSharingSystemDb> {
         return map { it.toBicycleSharingSystemDb() }
     }
+
 
 }

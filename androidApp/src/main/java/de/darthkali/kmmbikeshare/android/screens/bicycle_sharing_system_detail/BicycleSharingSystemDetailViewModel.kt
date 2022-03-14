@@ -3,18 +3,17 @@ package de.darthkali.kmmbikeshare.android.screens.bicycle_sharing_system_detail
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import de.darthkali.kmmbikeshare.android.screens.BaseViewModel
+import de.darthkali.kmmbikeshare.interactors.GetBicycleSharingSystem
 import de.darthkali.kmmbikeshare.interactors.SearchBicycleSharingSystems
 import de.darthkali.kmmbikeshare.presentation.recipe_list.BicycleSharingSystemDetailEvents
 import de.darthkali.kmmbikeshare.presentation.recipe_list.BicycleSharingSystemDetailState
 import org.koin.core.component.inject
 
 class BicycleSharingSystemDetailViewModel(
-//    savedStateHandle: SavedStateHandle,
+    bssid: String
 ) : BaseViewModel() {
-    private val searchIngredient: SearchBicycleSharingSystems by inject()
 
-    //    private val saveIngredient: SaveIngredient by inject()
-//    private val logger = Logger("IngredientListViewModel")
+    private val getBicycleSharingSystem: GetBicycleSharingSystem by inject()
 
 
     val state: MutableState<BicycleSharingSystemDetailState> = mutableStateOf(
@@ -22,14 +21,29 @@ class BicycleSharingSystemDetailViewModel(
     )
 
     init {
-//        state.value = state.value.copy(country = "United Kingdom")
-//        loadIngredients()
+        loadBicycleSharingSystem(bssid)
+    }
+
+    private fun loadBicycleSharingSystem(bssid: String) {
+        val bicycleSharingSystem = getBicycleSharingSystem.execute(bssid)
+        if (bicycleSharingSystem != null) {
+            state.value = state.value.copy(
+                isLoading = true,
+                bssid = bicycleSharingSystem.bssid,
+                brand = bicycleSharingSystem.brand,
+                city = bicycleSharingSystem.city,
+                country = bicycleSharingSystem.country,
+                site = bicycleSharingSystem.site,
+                electric = bicycleSharingSystem.electric,
+                currently_active = bicycleSharingSystem.currently_active,
+            )
+        }
     }
 
     fun onTriggerEvent(event: BicycleSharingSystemDetailEvents) {
         when (event) {
             BicycleSharingSystemDetailEvents.LoadBicycleSharingSystem -> {
-                loadIngredients()
+
             }
             else -> {
 //                logger.log("Something went wrong.")
@@ -37,21 +51,4 @@ class BicycleSharingSystemDetailViewModel(
         }
     }
 
-//    private fun saveIngredient(ingredient: Ingredient) {
-//        saveIngredient.execute(ingredient, state.value.recipeId).let {
-//            logger.log("Ingredients ID was: $it")
-//        }
-//    }
-
-    private fun loadIngredients() {
-//        searchIngredient.execute(
-//            country = state.value.country,
-//        ).collectCommon(viewModelScope) { dataState ->
-//            state.value = state.value.copy(isLoading = dataState.isLoading)
-//
-//            dataState.data?.let { ingredients ->
-////                appendIngredients(ingredients)
-//            }
-//        }
-    }
 }

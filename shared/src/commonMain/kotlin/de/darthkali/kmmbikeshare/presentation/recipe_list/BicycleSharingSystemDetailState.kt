@@ -2,6 +2,7 @@ package de.darthkali.kmmbikeshare.presentation.recipe_list
 
 data class BicycleSharingSystemDetailState(
     val isLoading: Boolean = false,
+    val bssid: String,
     var brand: String? = "",
     var city: String? = "",
     var country: String? = "",
@@ -12,6 +13,7 @@ data class BicycleSharingSystemDetailState(
     // Need secondary constructor to initialize with no args in SwiftUI
     constructor() : this(
         isLoading = false,
+        bssid = "",
         brand = "",
         city = "",
         country = "",

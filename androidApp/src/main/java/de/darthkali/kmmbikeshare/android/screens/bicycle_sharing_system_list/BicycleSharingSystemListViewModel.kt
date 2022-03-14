@@ -9,6 +9,7 @@ import de.darthkali.kmmbikeshare.interactors.SearchBicycleSharingSystems
 import de.darthkali.kmmbikeshare.presentation.ingredient_list.BicycleSharingSystemListEvents
 import de.darthkali.kmmbikeshare.presentation.ingredient_list.BicycleSharingSystemListState
 import de.darthkali.kmmbikeshare.util.Logger
+import de.darthkali.weefood.interactors.ingredient.SaveBicycleSharingSystems
 import org.koin.core.component.inject
 
 class BicycleSharingSystemListViewModel(
@@ -16,6 +17,7 @@ class BicycleSharingSystemListViewModel(
 ) : BaseViewModel() {
 
     private val searchIngredient: SearchBicycleSharingSystems by inject()
+    private val saveIngredient: SaveBicycleSharingSystems by inject()
     private val logger = Logger("BicycleSharingSystemListViewModel")
 
 
@@ -43,7 +45,9 @@ class BicycleSharingSystemListViewModel(
     }
 
     private fun saveAllBicycleSharingSystems(bicycleSharingSystems: List<BicycleSharingSystem>) {
-
+        bicycleSharingSystems.forEach { bicycleSharingSystem ->
+            saveIngredient.execute(bicycleSharingSystem)
+        }
     }
 
     private fun loadBicycleSharingSystem() {

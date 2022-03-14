@@ -13,6 +13,7 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavBackStackEntry
 import de.darthkali.kmmbikeshare.presentation.recipe_list.BicycleSharingSystemDetailState
 import de.darthkali.kmmbikeshare.android.navigation.TopBar
 import de.darthkali.kmmbikeshare.android.theme.AppTheme
@@ -25,10 +26,11 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 @Composable
 fun BicycleSharingSystemDetailScreen(
     bicycleSharingSystemDetailState: BicycleSharingSystemDetailState,
+    onClickBack: (String) -> Unit,
 ) {
 
     AppTheme(
-        displayProgressBar = bicycleSharingSystemDetailState.isLoading,
+//        displayProgressBar = bicycleSharingSystemDetailState.isLoading,
     ) {
         Scaffold(
             topBar = {
@@ -36,7 +38,7 @@ fun BicycleSharingSystemDetailScreen(
                     title = bicycleSharingSystemDetailState.brand ?: "",
                     navigationIcon = Icons.Filled.ArrowBack,
                     navigationIconClickAction = {
-//                        onClickBack(bicycleSharingSystemListState.recipeId)
+                        onClickBack(bicycleSharingSystemDetailState.country!!)
                     },
                 )
             },
@@ -48,12 +50,10 @@ fun BicycleSharingSystemDetailScreen(
                         Text(text = "brand: ")
                         Text(text = bicycleSharingSystemDetailState.brand ?: "")
                     }
-
                     Row() {
                         Text(text = "city: ")
                         Text(text = bicycleSharingSystemDetailState.city ?: "")
                     }
-
                     Row() {
                         Text(text = "country: ")
                         Text(text = bicycleSharingSystemDetailState.country ?: "")
