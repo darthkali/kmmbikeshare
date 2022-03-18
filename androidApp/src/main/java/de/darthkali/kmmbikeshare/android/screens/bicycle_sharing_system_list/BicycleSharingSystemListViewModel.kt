@@ -6,18 +6,16 @@ import androidx.lifecycle.viewModelScope
 import de.darthkali.kmmbikeshare.android.screens.BaseViewModel
 import de.darthkali.kmmbikeshare.domain.model.BicycleSharingSystem
 import de.darthkali.kmmbikeshare.interactors.SearchBicycleSharingSystems
-import de.darthkali.kmmbikeshare.presentation.ingredient_list.BicycleSharingSystemListEvents
-import de.darthkali.kmmbikeshare.presentation.ingredient_list.BicycleSharingSystemListState
-import de.darthkali.kmmbikeshare.util.Logger
-import de.darthkali.weefood.interactors.ingredient.SaveBicycleSharingSystems
+import de.darthkali.kmmbikeshare.states.BicycleSharingSystemListState
+import de.darthkali.kmmbikeshare.interactors.SaveBicycleSharingSystems
 import org.koin.core.component.inject
 
 class BicycleSharingSystemListViewModel(
     country: String
 ) : BaseViewModel() {
 
-    private val searchIngredient: SearchBicycleSharingSystems by inject()
-    private val saveIngredient: SaveBicycleSharingSystems by inject()
+    private val searchBicycleSharingSystems: SearchBicycleSharingSystems by inject()
+    private val saveBicycleSharingSystems: SaveBicycleSharingSystems by inject()
 
 
     val state: MutableState<BicycleSharingSystemListState> = mutableStateOf(
@@ -31,12 +29,12 @@ class BicycleSharingSystemListViewModel(
 
     private fun saveAllBicycleSharingSystems(bicycleSharingSystems: List<BicycleSharingSystem>) {
         bicycleSharingSystems.forEach { bicycleSharingSystem ->
-            saveIngredient.execute(bicycleSharingSystem)
+            saveBicycleSharingSystems.execute(bicycleSharingSystem)
         }
     }
 
     private fun loadBicycleSharingSystem() {
-        searchIngredient.execute(
+        searchBicycleSharingSystems.execute(
             country = state.value.country,
         ).collectCommon(viewModelScope) { dataState ->
             state.value = state.value.copy(isLoading = dataState.isLoading)

@@ -34,14 +34,13 @@ fun CountryCard(
         elevation = 8.dp,
         backgroundColor = MaterialTheme.colors.surface,
         onClick = {
-            navController.navigate("${NavigationItem.BicycleSharingSystemList.route}?country=$country")
+            navController.navigate("${NavigationItem.BicycleSharingSystemList.route}?country=$country") // TODO refactor
         }
     ) {
         Column() {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
-                    text = country
-                        ?: "", // if ingredient.name == null, then set "" as text
+                    text = country,
                     modifier = Modifier
                         .fillMaxWidth(0.85f)
                         .wrapContentWidth(Alignment.Start),
@@ -51,22 +50,3 @@ fun CountryCard(
         }
     }
 }
-
-// @ExperimentalCoroutinesApi
-// @ExperimentalMaterialApi
-// @ExperimentalComposeUiApi
-// @Preview(showBackground = true)
-// @Composable
-// fun UserProfileDetailsPreview() {
-//    val apple = Ingredient(
-//        id = 1,
-//        name = "Apfel",
-//        image = "apple.img",
-// //        aisle = "meat",
-// //        possibleUnits = listOf(),
-//    )
-//    AppTheme() {
-//        IngredientCard(ingredient = apple)
-//    }
-//
-// }

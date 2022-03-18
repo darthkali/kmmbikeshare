@@ -1,4 +1,4 @@
-package de.darthkali.kmmbikeshare.presentation.ingredient_list
+package de.darthkali.kmmbikeshare.states
 
 import de.darthkali.kmmbikeshare.domain.model.BicycleSharingSystem
 

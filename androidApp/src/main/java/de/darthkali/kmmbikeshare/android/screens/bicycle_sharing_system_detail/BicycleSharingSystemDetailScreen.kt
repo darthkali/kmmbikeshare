@@ -13,8 +13,7 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavBackStackEntry
-import de.darthkali.kmmbikeshare.presentation.recipe_list.BicycleSharingSystemDetailState
+import de.darthkali.kmmbikeshare.states.BicycleSharingSystemDetailState
 import de.darthkali.kmmbikeshare.android.navigation.TopBar
 import de.darthkali.kmmbikeshare.android.theme.AppTheme
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -29,9 +28,7 @@ fun BicycleSharingSystemDetailScreen(
     onClickBack: (String) -> Unit,
 ) {
 
-    AppTheme(
-//        displayProgressBar = bicycleSharingSystemDetailState.isLoading,
-    ) {
+    AppTheme {
         Scaffold(
             topBar = {
                 TopBar(
@@ -47,27 +44,27 @@ fun BicycleSharingSystemDetailScreen(
 
                 Column {
                     Row() {
-                        Text(text = "brand: ")
+                        Text(text = "Brand: ")
                         Text(text = bicycleSharingSystemDetailState.brand ?: "")
                     }
                     Row() {
-                        Text(text = "city: ")
+                        Text(text = "City: ")
                         Text(text = bicycleSharingSystemDetailState.city ?: "")
                     }
                     Row() {
-                        Text(text = "country: ")
+                        Text(text = "Country: ")
                         Text(text = bicycleSharingSystemDetailState.country ?: "")
                     }
                     Row() {
-                        Text(text = "site: ")
+                        Text(text = "Site: ")
                         Text(text = bicycleSharingSystemDetailState.site ?: "")
                     }
                     Row() {
-                        Text(text = "electric: ")
+                        Text(text = "Electric: ")
                         Text(text = bicycleSharingSystemDetailState.electric ?: "")
                     }
                     Row() {
-                        Text(text = "currently_active: ")
+                        Text(text = "Currently_active: ")
                         Text(text = bicycleSharingSystemDetailState.currently_active ?: "")
                     }
 

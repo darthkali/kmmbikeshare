@@ -16,7 +16,7 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import de.darthkali.kmmbikeshare.android.navigation.TopBar
 import de.darthkali.kmmbikeshare.android.theme.AppTheme
-import de.darthkali.kmmbikeshare.presentation.ingredient_list.BicycleSharingSystemListState
+import de.darthkali.kmmbikeshare.states.BicycleSharingSystemListState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 
@@ -57,7 +57,7 @@ fun BicycleSharingSystemListScreen(
                         LazyColumn {
                             itemsIndexed(
                                 items = bicycleSharingSystemListState.bicycleSharingSystems
-                            ) { index, bicycleSharingSystem ->
+                            ) { _, bicycleSharingSystem ->
                                 BicycleSharingSystemCard(
                                     bicycleSharingSystem = bicycleSharingSystem,
                                     onOpenBicycleSharingSystem = onOpenBicycleSharingSystem

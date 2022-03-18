@@ -1,4 +1,4 @@
-package de.darthkali.kmmbikeshare.datasource.database.mapper.recipe
+package de.darthkali.kmmbikeshare.datasource.database.mapper
 
 import de.darthkali.kmmbikeshare.datasource.BaseMapper
 import de.darthkali.kmmbikeshare.datasource.network.BicycleSharingSystemNetworkObject

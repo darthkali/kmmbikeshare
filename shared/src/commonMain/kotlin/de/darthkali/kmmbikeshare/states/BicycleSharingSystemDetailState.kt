@@ -1,4 +1,4 @@
-package de.darthkali.kmmbikeshare.presentation.recipe_list
+package de.darthkali.kmmbikeshare.states
 
 data class BicycleSharingSystemDetailState(
     val isLoading: Boolean = false,

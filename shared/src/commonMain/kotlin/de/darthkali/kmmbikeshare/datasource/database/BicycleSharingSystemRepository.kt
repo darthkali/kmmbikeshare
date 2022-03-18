@@ -72,7 +72,7 @@ class BicycleSharingSystemRepository : KoinComponent {
 
     fun getBicycleSharingSystemByBssid(bssid: String): BicycleSharingSystemDb? {
         return try {
-            logger.log("Get Ingredient from database by ApiID")
+            logger.log("Get BicycleSharingSystem from database by ApiID")
             bicycleSharingSystemDatabaseQueries.getBikeShareByBssid(
                 bssid = bssid
             ).executeAsOne().toBicycleSharingSystemDb()
@@ -84,7 +84,7 @@ class BicycleSharingSystemRepository : KoinComponent {
 
     fun deleteBicycleSharingSystemById(bicycleSharingSystemId: Int): Boolean {
         return try {
-            logger.log("Delete Ingredient from database by ID")
+            logger.log("Delete BicycleSharingSystem from database by ID")
             bicycleSharingSystemDatabaseQueries.deleteBikeShareById(id = bicycleSharingSystemId.toLong())
             true
         } catch (e: Exception) {

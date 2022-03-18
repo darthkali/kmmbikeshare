@@ -13,7 +13,6 @@ class BicycleSharingSystemRepositoryTest : BaseTest() {
     @BeforeTest
     fun setup() = runTest {
         writeHead("setup")
-//        bicycleSharingSystemRepository.getAllBicycleSharingSystems()
         bicycleSharingSystemRepository.deleteAllBicycleSharingSystems()
         val bicycleSharingSystems = BicycleSharingSystemMock.bicycleSharingSystemDbList
 
@@ -70,7 +69,7 @@ class BicycleSharingSystemRepositoryTest : BaseTest() {
 
     @Test
     fun get_bicycleSharingSystem_by_Bssid_success() = runTest {
-        writeHead("get_bicycleSharingSystem_by_id_success")
+        writeHead("get_bicycleSharingSystem_by_Bssid_success")
         val bicycleSharingSystems = bicycleSharingSystemRepository.getAllBicycleSharingSystems()
 
         for (bicycleSharingSystemItem in bicycleSharingSystems) {
@@ -119,14 +118,14 @@ class BicycleSharingSystemRepositoryTest : BaseTest() {
     fun update_bicycleSharingSystem_success() = runTest {
         writeHead("update_bicycleSharingSystem_success")
 
-        for (recipe in bicycleSharingSystemRepository.getAllBicycleSharingSystems()) {
-            println(recipe.toString())
+        for (bicycleSharingSystem in bicycleSharingSystemRepository.getAllBicycleSharingSystems()) {
+            println(bicycleSharingSystem.toString())
         }
 
         bicycleSharingSystemRepository.updateBicycleSharingSystemByBssid(BicycleSharingSystemMock.bicycleSharingSystemDbUpdate)
 
-        for (recipe in bicycleSharingSystemRepository.getAllBicycleSharingSystems()) {
-            println(recipe.toString())
+        for (bicycleSharingSystem in bicycleSharingSystemRepository.getAllBicycleSharingSystems()) {
+            println(bicycleSharingSystem.toString())
         }
         assertEquals(
             expected = BicycleSharingSystemMock.bicycleSharingSystemDbUpdate,

@@ -7,9 +7,9 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
 /**
- *  Got my idea for this from stackoverflow post
  * Source:
  * https://stackoverflow.com/questions/64175099/listen-to-kotlin-coroutine-flow-from-ios
+ * and from Mitch Tabian
  */
 
 /**

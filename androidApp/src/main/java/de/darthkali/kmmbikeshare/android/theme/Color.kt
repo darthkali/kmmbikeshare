@@ -4,6 +4,7 @@ import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.ui.graphics.Color
 
+// TODO update colors
 val DarkGreen = Color(0xFF356859)
 val LightGreen = Color(0xFFB9E4C9)
 val Orange = Color(0xFFFD5523)

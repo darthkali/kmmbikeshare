@@ -10,18 +10,17 @@ import org.koin.core.component.inject
 class GetBicycleSharingSystem : KoinComponent {
 
     private val bicycleSharingSystemRepository: BicycleSharingSystemRepository by inject()
-    private val logger = Logger("SaveBicycleSharingSystems")
-    private val mapper = BicycleSharingSystemDbMapper()
+    private val logger = Logger("GetBicycleSharingSystem")
 
     /**
-     * @param recipeId: Int
+     * @param bssid: Int
      *
-     * check if we have a valid recipeId?
+     * check if we have a valid bssid?
      *
-     * is the response not null, then create a Recipe and return it
+     * is the response is not null, then create a BicycleSharingSystem and return it
      * else place a log message and return null
      *
-     * @return Recipe
+     * @return BicycleSharingSystem
      */
     fun execute(bssid: String): BicycleSharingSystem? {
         return try {

@@ -1,4 +1,4 @@
-package de.darthkali.weefood.interactors.ingredient
+package de.darthkali.kmmbikeshare.interactors
 
 import de.darthkali.kmmbikeshare.datasource.database.BicycleSharingSystemRepository
 import de.darthkali.kmmbikeshare.datasource.database.mapper.BicycleSharingSystemDbMapper
@@ -15,14 +15,12 @@ class SaveBicycleSharingSystems : KoinComponent {
 
     /**
      * @param bicycleSharingSystem: BicycleSharingSystem
-     * @param recipeId: Int
      *
-     * search ingredient by ApiId
-     * is there a result, then update the ingredient and return the database-id
-     * is the result == null, then insert new ingredient and return the new database-id
-     * create a new recipe_ingredient
+     * search BicycleSharingSystem by bssid
+     * is there a result, then update the BicycleSharingSystem and return the database-id
+     * if the result is null, then insert a new BicycleSharingSystem and return the new database-id
      *
-     * @return recipeIngredient-ID
+     * @return BicycleSharingSystem-ID
      */
     fun execute(bicycleSharingSystem: BicycleSharingSystem): Int? {
         try {

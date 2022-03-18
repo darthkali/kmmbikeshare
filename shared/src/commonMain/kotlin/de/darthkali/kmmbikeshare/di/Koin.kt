@@ -6,7 +6,7 @@ import de.darthkali.kmmbikeshare.datasource.network.BicycleSharingSystemService
 import de.darthkali.kmmbikeshare.datasource.network.KtorClientFactory
 import de.darthkali.kmmbikeshare.interactors.GetBicycleSharingSystem
 import de.darthkali.kmmbikeshare.interactors.SearchBicycleSharingSystems
-import de.darthkali.weefood.interactors.ingredient.SaveBicycleSharingSystems
+import de.darthkali.kmmbikeshare.interactors.SaveBicycleSharingSystems
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
 import org.koin.dsl.KoinAppDeclaration

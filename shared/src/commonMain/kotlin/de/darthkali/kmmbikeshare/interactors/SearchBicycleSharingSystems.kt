@@ -18,11 +18,9 @@ class SearchBicycleSharingSystems : KoinComponent {
     private val logger = Logger("SearchBicycleSharingSystems")
 
     /**
-     * @param query: String
-     * @param page: Int
+     * @param country: String
      *
-     * search ingredient by name (query)
-     * result depends on the page (pagination)
+     * search BicycleSharingSystem List by country
      * emits the result in a data object
      *
      * @return DataState
@@ -31,14 +29,15 @@ class SearchBicycleSharingSystems : KoinComponent {
         country: String,
     ): CommonFlow<DataState<List<BicycleSharingSystem>>> = flow {
         try {
+
             emit(DataState.loading())
 
-            val ingredientList = mapper.mapTo(
+            val bicycleSharingSystemList = mapper.mapTo(
                 bicycleSharingSystemService.searchBicycleSharingSystems(
                     country = country,
                 )
             )
-            emit(DataState.data(data = ingredientList))
+            emit(DataState.data(data = bicycleSharingSystemList))
         } catch (e: Exception) {
             logger.log(e.toString())
         }

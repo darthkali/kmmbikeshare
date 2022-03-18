@@ -32,7 +32,7 @@ fun CountryListScreen(
             LazyColumn {
                 itemsIndexed(
                     items = Countries().countryList
-                ) { index, ingredient ->
+                ) { _, ingredient ->
                     CountryCard(
                         country = ingredient,
                         navController = navController

@@ -4,9 +4,7 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import de.darthkali.kmmbikeshare.android.screens.BaseViewModel
 import de.darthkali.kmmbikeshare.interactors.GetBicycleSharingSystem
-import de.darthkali.kmmbikeshare.interactors.SearchBicycleSharingSystems
-import de.darthkali.kmmbikeshare.presentation.recipe_list.BicycleSharingSystemDetailEvents
-import de.darthkali.kmmbikeshare.presentation.recipe_list.BicycleSharingSystemDetailState
+import de.darthkali.kmmbikeshare.states.BicycleSharingSystemDetailState
 import org.koin.core.component.inject
 
 class BicycleSharingSystemDetailViewModel(
