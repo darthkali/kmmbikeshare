@@ -14,6 +14,8 @@ kotlin {
     iosArm64()
     iosSimulatorArm64()
 
+
+
     cocoapods {
         summary = "Some description for the Shared Module"
         homepage = "Link to the Shared Module homepage"
@@ -25,6 +27,15 @@ kotlin {
     }
     
     sourceSets {
+//        all {
+//            languageSettings.apply {
+//                optIn("kotlin.RequiresOptIn")
+//                optIn("kotlinx.coroutines.ExperimentalCoroutinesApi")
+//            }
+//        }
+
+
+
         // Common ----------
         val commonMain by getting{
             dependencies {
@@ -115,12 +126,28 @@ android {
     defaultConfig {
         minSdk = Application.minSdk
         targetSdk = Application.targetSdk
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+//    configurations {
+//        create("androidTestApi")
+//        create("androidTestDebugApi")
+//        create("androidTestReleaseApi")
+//        create("testApi")
+//        create("testDebugApi")
+//        create("testReleaseApi")
+//    }
+
 }
 
 sqldelight {
     database("KmmBikeShareDatabase") {
-        packageName = "de.darthkali.kmm_bike_share.datasource.database"
+        packageName = "de.darthkali.kmmbikeshare.datasource.database"
         sourceFolders = listOf("sqldelight")
     }
 }

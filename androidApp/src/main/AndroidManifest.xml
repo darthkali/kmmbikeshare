@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="de.darthkali.kmm_bike_share.android">
+    package="de.darthkali.kmmbikeshare.android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:allowBackup="false"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:configChanges="orientation"
+        android:label="KMM Bike Share">
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -15,4 +18,4 @@
             </intent-filter>
         </activity>
     </application>
-</manifest> 
+</manifest>
