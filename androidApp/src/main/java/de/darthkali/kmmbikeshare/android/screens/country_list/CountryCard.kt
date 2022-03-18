@@ -47,7 +47,8 @@ fun CountryCard(
                     text = country,
                     modifier = Modifier
                         .fillMaxWidth(0.85f)
-                        .wrapContentWidth(Alignment.Start),
+                        .wrapContentWidth(Alignment.Start)
+                        .padding(10.dp),
                     style = typography.h2
                 )
             }

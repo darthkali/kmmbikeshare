@@ -14,6 +14,38 @@ private val Montserrat = FontFamily(
     Font(R.font.montserrat_bold, FontWeight.Bold)
 )
 
+private val Panton = FontFamily(
+    Font(R.font.fontfabric_panton, FontWeight.Normal),
+)
+
+val PantonTypography = Typography(
+    h1 = TextStyle(
+        fontFamily = Panton,
+        fontWeight = FontWeight.Medium,
+        fontSize = 24.sp,
+    ),
+    h2 = TextStyle(
+        fontFamily = Panton,
+        fontWeight = FontWeight.Medium,
+        fontSize = 20.sp,
+    ),
+    body1 = TextStyle(
+        fontFamily = Panton,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp
+    ),
+    body2 = TextStyle(
+        fontFamily = Panton,
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.sp
+    ),
+    button = TextStyle(
+        fontFamily = Panton,
+        fontWeight = FontWeight.Bold,
+        fontSize = 14.sp,
+    )
+)
+
 val MontserratTypography = Typography(
     h1 = TextStyle(
         fontFamily = Montserrat,

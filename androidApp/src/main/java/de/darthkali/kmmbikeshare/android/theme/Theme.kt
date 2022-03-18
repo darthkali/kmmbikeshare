@@ -15,13 +15,12 @@ import androidx.compose.ui.Modifier
 @ExperimentalMaterialApi
 @Composable
 fun AppTheme(
-    displayProgressBar: Boolean = false,
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit,
 ) {
     MaterialTheme(
         colors = if (darkTheme) DarkColors else LightColors,
-        typography = MontserratTypography,
+        typography = MontserratTypography, // TODO: maybe we can change this to: PantonTypography,
         shapes = AppShapes
     ) {
         Box(
@@ -32,7 +31,6 @@ fun AppTheme(
             Column {
                 content()
             }
-//            CircularIndeterminateProgressBar(isDisplayed = displayProgressBar, 0.3f)
         }
     }
 }

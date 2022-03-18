@@ -30,9 +30,7 @@ fun BicycleSharingSystemListScreen(
     onClickBack: () -> Unit,
 ) {
 
-    AppTheme(
-        displayProgressBar = bicycleSharingSystemListState.isLoading,
-    ) {
+    AppTheme{
         Scaffold(
             topBar = {
                 TopBar(

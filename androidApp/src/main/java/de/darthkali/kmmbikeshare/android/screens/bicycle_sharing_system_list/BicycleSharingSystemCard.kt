@@ -38,7 +38,7 @@ fun BicycleSharingSystemCard(
         backgroundColor = MaterialTheme.colors.surface,
         onClick = { onOpenBicycleSharingSystem(bicycleSharingSystem.bssid) }
     ) {
-        Column() {
+        Column(modifier = Modifier.padding(10.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
                     text = bicycleSharingSystem.brand ?: "",
