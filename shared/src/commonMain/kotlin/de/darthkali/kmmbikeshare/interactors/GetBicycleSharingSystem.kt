@@ -1,4 +1,4 @@
-package de.darthkali.kmmbikeshare.interactors//package de.darthkali.kmmbikeshare.interactors.recipe
+package de.darthkali.kmmbikeshare.interactors
 
 import de.darthkali.kmmbikeshare.datasource.database.BicycleSharingSystemRepository
 import de.darthkali.kmmbikeshare.datasource.database.mapper.BicycleSharingSystemDbMapper

@@ -1,11 +1,3 @@
-//
-//  IngredientListViewModel.swift
-//  iosWeeFood
-//
-//  Created by Danny Steinbrecher on 13.07.21.
-//  Copyright © 2021 orgName. All rights reserved.
-//
-
 import SwiftUI
 import shared
 
@@ -79,7 +71,7 @@ class BicycleSharingSystemListViewModel: ObservableObject {
     
     /**
      *  Not everything can be conveniently updated with this function.
-     *  Things like recipes, selectedCategory must have their own functions.
+     *  Things like bicycleSharingSystems must have their own functions.
      */
     private func updateState(
         isLoading: Bool? = nil,

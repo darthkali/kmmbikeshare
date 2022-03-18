@@ -1,11 +1,3 @@
-//
-//  IngredientListScreen.swift
-//  iosWeeFood
-//
-//  Created by Danny Steinbrecher on 11.07.21.
-//  Copyright © 2021 orgName. All rights reserved.
-//
-
 import SwiftUI
 import shared
 
