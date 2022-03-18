@@ -5,9 +5,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.viewModelScope
 import de.darthkali.kmmbikeshare.android.screens.BaseViewModel
 import de.darthkali.kmmbikeshare.domain.model.BicycleSharingSystem
+import de.darthkali.kmmbikeshare.interactors.SaveBicycleSharingSystems
 import de.darthkali.kmmbikeshare.interactors.SearchBicycleSharingSystems
 import de.darthkali.kmmbikeshare.states.BicycleSharingSystemListState
-import de.darthkali.kmmbikeshare.interactors.SaveBicycleSharingSystems
 import org.koin.core.component.inject
 
 class BicycleSharingSystemListViewModel(
@@ -16,7 +16,6 @@ class BicycleSharingSystemListViewModel(
 
     private val searchBicycleSharingSystems: SearchBicycleSharingSystems by inject()
     private val saveBicycleSharingSystems: SaveBicycleSharingSystems by inject()
-
 
     val state: MutableState<BicycleSharingSystemListState> = mutableStateOf(
         BicycleSharingSystemListState()
@@ -44,7 +43,6 @@ class BicycleSharingSystemListViewModel(
                 saveAllBicycleSharingSystems(bicycleSharingSystems)
             }
         }
-
     }
 
     private fun appendBicycleSharingSystem(bicycleSharingSystems: List<BicycleSharingSystem>) {

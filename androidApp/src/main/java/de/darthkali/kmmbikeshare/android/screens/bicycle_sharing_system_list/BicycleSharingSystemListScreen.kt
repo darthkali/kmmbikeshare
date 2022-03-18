@@ -19,7 +19,6 @@ import de.darthkali.kmmbikeshare.android.theme.AppTheme
 import de.darthkali.kmmbikeshare.states.BicycleSharingSystemListState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
-
 @ExperimentalCoroutinesApi
 @ExperimentalMaterialApi
 @ExperimentalComposeUiApi

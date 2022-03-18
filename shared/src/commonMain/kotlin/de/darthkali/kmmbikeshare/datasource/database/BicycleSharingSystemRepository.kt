@@ -1,7 +1,6 @@
 package de.darthkali.kmmbikeshare.datasource.database
 
 import de.darthkali.kmmbikeshare.util.Logger
-import de.darthkali.kmmbikeshare.datasource.database.Bike_share_Entity
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
@@ -11,7 +10,6 @@ class BicycleSharingSystemRepository : KoinComponent {
     private val bicycleSharingSystemDatabaseQueries =
         bicycleSharingSystemDatabase.instance.bikeShareDbQueries
     private val logger = Logger("BicycleSharingSystemRepository")
-
 
     fun deleteAllBicycleSharingSystems(): Boolean {
         return try {
@@ -23,7 +21,6 @@ class BicycleSharingSystemRepository : KoinComponent {
             false
         }
     }
-
 
     fun insertBicycleSharingSystem(bicycleSharingSystem: BicycleSharingSystemDb): Int? {
         return try {
@@ -45,18 +42,15 @@ class BicycleSharingSystemRepository : KoinComponent {
         }
     }
 
-
     fun getAllBicycleSharingSystems(): List<BicycleSharingSystemDb> {
         return try {
             logger.log("Get All BicycleSharingSystem from database")
-            bicycleSharingSystemDatabaseQueries.getAllBikeShares(
-            ).executeAsList().toBicycleSharingSystemDbList()
+            bicycleSharingSystemDatabaseQueries.getAllBikeShares().executeAsList().toBicycleSharingSystemDbList()
         } catch (e: Exception) {
             logger.log(e.toString())
             listOf()
         }
     }
-
 
     fun getBicycleSharingSystemById(bicycleSharingSystemId: Int): BicycleSharingSystemDb? {
         return try {
@@ -93,7 +87,6 @@ class BicycleSharingSystemRepository : KoinComponent {
         }
     }
 
-
     fun updateBicycleSharingSystemByBssid(bicycleSharingSystemDbUpdate: BicycleSharingSystemDb): Int? {
         return try {
             bicycleSharingSystemDatabaseQueries.updateBikeShare(
@@ -114,7 +107,6 @@ class BicycleSharingSystemRepository : KoinComponent {
         }
     }
 
-
     fun Bike_share_Entity.toBicycleSharingSystemDb(): BicycleSharingSystemDb {
         return BicycleSharingSystemDb(
             databaseId = id.toInt(),
@@ -128,10 +120,7 @@ class BicycleSharingSystemRepository : KoinComponent {
         )
     }
 
-
     fun List<Bike_share_Entity>.toBicycleSharingSystemDbList(): List<BicycleSharingSystemDb> {
         return map { it.toBicycleSharingSystemDb() }
     }
-
-
 }

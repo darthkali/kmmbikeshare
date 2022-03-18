@@ -1,6 +1,5 @@
 package de.darthkali.kmmbikeshare.mockFactory
 
-
 data class Countries(
     val countryList: List<String> = listOf(
         "Argentina",

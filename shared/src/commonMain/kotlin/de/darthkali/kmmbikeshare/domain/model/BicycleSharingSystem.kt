@@ -68,6 +68,4 @@ data class BicycleSharingSystem(
         result = 31 * result + (currently_active?.hashCode() ?: 0)
         return result
     }
-
-
 }

@@ -14,7 +14,6 @@ object BicycleSharingSystemMock {
         currently_active = "yes"
     )
 
-
     val bicycleSharingSystemDbList = listOf(
         BicycleSharingSystemDb(
             bssid = "belfast",
@@ -78,7 +77,6 @@ object BicycleSharingSystemMock {
             electric = "no",
             currently_active = "yes"
 
-
         ),
         BicycleSharingSystemDb(
             bssid = "lincoln",
@@ -113,4 +111,3 @@ object BicycleSharingSystemMock {
         currently_active = "${bicycleSharingSystemDbList[bicycleSharingSystemDbUpdateIndex].currently_active} update",
     )
 }
-

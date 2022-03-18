@@ -13,9 +13,9 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
-import de.darthkali.kmmbikeshare.states.BicycleSharingSystemDetailState
 import de.darthkali.kmmbikeshare.android.navigation.TopBar
 import de.darthkali.kmmbikeshare.android.theme.AppTheme
+import de.darthkali.kmmbikeshare.states.BicycleSharingSystemDetailState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 @ExperimentalCoroutinesApi
@@ -67,11 +67,8 @@ fun BicycleSharingSystemDetailScreen(
                         Text(text = "Currently_active: ")
                         Text(text = bicycleSharingSystemDetailState.currently_active ?: "")
                     }
-
                 }
             }
         }
     }
 }
-
-

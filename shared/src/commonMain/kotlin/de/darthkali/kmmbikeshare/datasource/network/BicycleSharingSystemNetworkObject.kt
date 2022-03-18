@@ -3,7 +3,6 @@ package de.darthkali.kmmbikeshare.datasource.network
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-
 @Serializable
 data class BicycleSharingSystemNetworkObject(
     @SerialName("bssid")

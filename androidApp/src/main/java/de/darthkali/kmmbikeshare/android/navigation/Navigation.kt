@@ -10,9 +10,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
 import de.darthkali.kmmbikeshare.android.screens.bicycle_sharing_system_detail.BicycleSharingSystemDetailScreen
+import de.darthkali.kmmbikeshare.android.screens.bicycle_sharing_system_detail.BicycleSharingSystemDetailViewModel
 import de.darthkali.kmmbikeshare.android.screens.bicycle_sharing_system_list.BicycleSharingSystemListScreen
 import de.darthkali.kmmbikeshare.android.screens.bicycle_sharing_system_list.BicycleSharingSystemListViewModel
-import de.darthkali.kmmbikeshare.android.screens.bicycle_sharing_system_detail.BicycleSharingSystemDetailViewModel
 import de.darthkali.kmmbikeshare.android.screens.country_list.CountryListScreen
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.androidx.compose.getViewModel
@@ -43,7 +43,6 @@ fun Navigation() {
         ) {
             CountryListScreen(navController)
         }
-
 
         /**
          * Navigation -> BicycleSharingSystemList

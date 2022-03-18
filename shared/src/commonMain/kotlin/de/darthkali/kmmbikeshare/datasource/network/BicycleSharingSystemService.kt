@@ -1,6 +1,7 @@
 package de.darthkali.kmmbikeshare.datasource.network
 
-import io.ktor.client.request.*
+import io.ktor.client.request.get
+import io.ktor.client.request.url
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
@@ -14,8 +15,8 @@ class BicycleSharingSystemService : KoinComponent {
         return httpClient.get {
             url(
                 BASE_URL +
-                        "/categories/base/fields/brand,city,country,electric,site,currently_active/locations/" +
-                        country
+                    "/categories/base/fields/brand,city,country,electric,site,currently_active/locations/" +
+                    country
             )
         }
     }

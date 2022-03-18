@@ -6,9 +6,9 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.ui.ExperimentalComposeUiApi
-import de.darthkali.kmmbikeshare.di.initKoin
 import de.darthkali.kmmbikeshare.android.di.appModule
 import de.darthkali.kmmbikeshare.android.navigation.Navigation
+import de.darthkali.kmmbikeshare.di.initKoin
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.android.ext.koin.androidContext
 

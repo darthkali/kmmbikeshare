@@ -1,7 +1,6 @@
 package de.darthkali.kmmbikeshare.interactors
 
 import de.darthkali.kmmbikeshare.datasource.database.BicycleSharingSystemRepository
-import de.darthkali.kmmbikeshare.datasource.database.mapper.BicycleSharingSystemDbMapper
 import de.darthkali.kmmbikeshare.domain.model.BicycleSharingSystem
 import de.darthkali.kmmbikeshare.util.Logger
 import org.koin.core.component.KoinComponent
@@ -24,7 +23,7 @@ class GetBicycleSharingSystem : KoinComponent {
      */
     fun execute(bssid: String): BicycleSharingSystem? {
         return try {
-            if (bssid.isBlank().not() ) {
+            if (bssid.isBlank().not()) {
                 bicycleSharingSystemRepository.getBicycleSharingSystemByBssid(bssid)?.let {
                     return BicycleSharingSystem(
                         bssid = it.bssid,
