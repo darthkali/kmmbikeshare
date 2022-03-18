@@ -15,7 +15,6 @@ class BicycleSharingSystemDetailViewModel(
 
     private val getBicycleSharingSystem: GetBicycleSharingSystem by inject()
 
-
     val state: MutableState<BicycleSharingSystemDetailState> = mutableStateOf(
         BicycleSharingSystemDetailState()
     )
@@ -39,16 +38,4 @@ class BicycleSharingSystemDetailViewModel(
             )
         }
     }
-
-    fun onTriggerEvent(event: BicycleSharingSystemDetailEvents) {
-        when (event) {
-            BicycleSharingSystemDetailEvents.LoadBicycleSharingSystem -> {
-
-            }
-            else -> {
-//                logger.log("Something went wrong.")
-            }
-        }
-    }
-
 }

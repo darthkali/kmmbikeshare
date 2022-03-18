@@ -18,7 +18,6 @@ class BicycleSharingSystemListViewModel(
 
     private val searchIngredient: SearchBicycleSharingSystems by inject()
     private val saveIngredient: SaveBicycleSharingSystems by inject()
-    private val logger = Logger("BicycleSharingSystemListViewModel")
 
 
     val state: MutableState<BicycleSharingSystemListState> = mutableStateOf(
@@ -28,20 +27,6 @@ class BicycleSharingSystemListViewModel(
     init {
         state.value = state.value.copy(country = country)
         this.loadBicycleSharingSystem()
-    }
-
-    fun onTriggerEvent(event: BicycleSharingSystemListEvents) {
-        when (event) {
-            BicycleSharingSystemListEvents.LoadBicycleSharingSystem -> {
-                this.loadBicycleSharingSystem()
-            }
-            BicycleSharingSystemListEvents.SaveAllBicycleSharingSystems -> {
-                saveAllBicycleSharingSystems(state.value.bicycleSharingSystems)
-            }
-            else -> {
-                logger.log("Something went wrong.")
-            }
-        }
     }
 
     private fun saveAllBicycleSharingSystems(bicycleSharingSystems: List<BicycleSharingSystem>) {

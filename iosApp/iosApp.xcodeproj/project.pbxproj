@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		032F7E74D27D63A01D3BB429 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFED09EA0B4CD31F5F9BB81B /* Pods_iosApp.framework */; };
-		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
-		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
-		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
-		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		612F3E2B27E4CA8B0087E5F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612F3DFB27E49B830087E5F0 /* AppDelegate.swift */; };
+		612F3E3027E4CA8B0087E5F0 /* BicycleSharingSystemDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612F3E0427E49B830087E5F0 /* BicycleSharingSystemDetailScreen.swift */; };
+		612F3E3127E4CA8B0087E5F0 /* BicycleSharingSystemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612F3E0527E49B830087E5F0 /* BicycleSharingSystemDetailViewModel.swift */; };
+		612F3E3227E4CA8B0087E5F0 /* CountryListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612F3E0727E49B830087E5F0 /* CountryListScreen.swift */; };
+		612F3E3327E4CA8B0087E5F0 /* BicycleSharingSystemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612F3E0927E49B830087E5F0 /* BicycleSharingSystemListViewModel.swift */; };
+		612F3E3627E4CA8B0087E5F0 /* BicycleSharingSystemListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612F3E0D27E49B830087E5F0 /* BicycleSharingSystemListScreen.swift */; };
+		619F3BB327DFCA6E00AF3F03 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 619F3BB227DFCA6E00AF3F03 /* Podfile */; };
+		F014BDFB7C0E4BC0CD30BC89 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFED09EA0B4CD31F5F9BB81B /* Pods_iosApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		4D17A06D0F51749E84B7EB1D /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
+		612F3DF827E49B830087E5F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		612F3DFA27E49B830087E5F0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		612F3DFB27E49B830087E5F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		612F3E0427E49B830087E5F0 /* BicycleSharingSystemDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BicycleSharingSystemDetailScreen.swift; sourceTree = "<group>"; };
+		612F3E0527E49B830087E5F0 /* BicycleSharingSystemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BicycleSharingSystemDetailViewModel.swift; sourceTree = "<group>"; };
+		612F3E0727E49B830087E5F0 /* CountryListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListScreen.swift; sourceTree = "<group>"; };
+		612F3E0927E49B830087E5F0 /* BicycleSharingSystemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BicycleSharingSystemListViewModel.swift; sourceTree = "<group>"; };
+		612F3E0D27E49B830087E5F0 /* BicycleSharingSystemListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BicycleSharingSystemListScreen.swift; sourceTree = "<group>"; };
+		612F3E1027E49B830087E5F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		619F3BB227DFCA6E00AF3F03 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8C14AF2816384609EC2661B /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BFED09EA0B4CD31F5F9BB81B /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -31,21 +39,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				032F7E74D27D63A01D3BB429 /* Pods_iosApp.framework in Frameworks */,
+				F014BDFB7C0E4BC0CD30BC89 /* Pods_iosApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		058557D7273AAEEB004C7B11 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		418942FE3F6F36E8F3A4FDAA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -63,12 +63,69 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		612F3DF727E49B830087E5F0 /* iosApp */ = {
+			isa = PBXGroup;
+			children = (
+				612F3DF927E49B830087E5F0 /* Preview Content */,
+				612F3E0227E49B830087E5F0 /* screens */,
+				612F3DF827E49B830087E5F0 /* Assets.xcassets */,
+				612F3DFB27E49B830087E5F0 /* AppDelegate.swift */,
+				612F3E1027E49B830087E5F0 /* Info.plist */,
+			);
+			path = iosApp;
+			sourceTree = "<group>";
+		};
+		612F3DF927E49B830087E5F0 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				612F3DFA27E49B830087E5F0 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		612F3E0227E49B830087E5F0 /* screens */ = {
+			isa = PBXGroup;
+			children = (
+				612F3E0627E49B830087E5F0 /* country_list */,
+				612F3E0827E49B830087E5F0 /* bicycle_sharing_system_list */,
+				612F3E0327E49B830087E5F0 /* bicycle_sharing_system_detail */,
+			);
+			path = screens;
+			sourceTree = "<group>";
+		};
+		612F3E0327E49B830087E5F0 /* bicycle_sharing_system_detail */ = {
+			isa = PBXGroup;
+			children = (
+				612F3E0427E49B830087E5F0 /* BicycleSharingSystemDetailScreen.swift */,
+				612F3E0527E49B830087E5F0 /* BicycleSharingSystemDetailViewModel.swift */,
+			);
+			path = bicycle_sharing_system_detail;
+			sourceTree = "<group>";
+		};
+		612F3E0627E49B830087E5F0 /* country_list */ = {
+			isa = PBXGroup;
+			children = (
+				612F3E0727E49B830087E5F0 /* CountryListScreen.swift */,
+			);
+			path = country_list;
+			sourceTree = "<group>";
+		};
+		612F3E0827E49B830087E5F0 /* bicycle_sharing_system_list */ = {
+			isa = PBXGroup;
+			children = (
+				612F3E0927E49B830087E5F0 /* BicycleSharingSystemListViewModel.swift */,
+				612F3E0D27E49B830087E5F0 /* BicycleSharingSystemListScreen.swift */,
+			);
+			path = bicycle_sharing_system_list;
+			sourceTree = "<group>";
+		};
 		7555FF72242A565900829871 = {
 			isa = PBXGroup;
 			children = (
-				7555FF7D242A565900829871 /* iosApp */,
-				7555FF7C242A565900829871 /* Products */,
+				612F3DF727E49B830087E5F0 /* iosApp */,
+				619F3BB227DFCA6E00AF3F03 /* Podfile */,
 				4770BBC21BBFAB82DE9EEF44 /* Pods */,
+				7555FF7C242A565900829871 /* Products */,
 				418942FE3F6F36E8F3A4FDAA /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -81,18 +138,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7555FF7D242A565900829871 /* iosApp */ = {
-			isa = PBXGroup;
-			children = (
-				058557BA273AAA24004C7B11 /* Assets.xcassets */,
-				7555FF82242A565900829871 /* ContentView.swift */,
-				7555FF8C242A565B00829871 /* Info.plist */,
-				2152FB032600AC8F00CF470E /* iOSApp.swift */,
-				058557D7273AAEEB004C7B11 /* Preview Content */,
-			);
-			path = iosApp;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -101,9 +146,9 @@
 			buildConfigurationList = 7555FFA5242A565B00829871 /* Build configuration list for PBXNativeTarget "iosApp" */;
 			buildPhases = (
 				3B9AE7EA07FD34BC8706C6B7 /* [CP] Check Pods Manifest.lock */,
-				7555FF77242A565900829871 /* Sources */,
 				7555FF79242A565900829871 /* Resources */,
 				23DD67584CC1317E723FAD7A /* Frameworks */,
+				612F3E2A27E4CA790087E5F0 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -122,7 +167,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = orgName;
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					7555FF7A242A565900829871 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -152,8 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */,
-				058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */,
+				619F3BB327DFCA6E00AF3F03 /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,12 +229,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7555FF77242A565900829871 /* Sources */ = {
+		612F3E2A27E4CA790087E5F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
-				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				612F3E2B27E4CA8B0087E5F0 /* AppDelegate.swift in Sources */,
+				612F3E3027E4CA8B0087E5F0 /* BicycleSharingSystemDetailScreen.swift in Sources */,
+				612F3E3127E4CA8B0087E5F0 /* BicycleSharingSystemDetailViewModel.swift in Sources */,
+				612F3E3227E4CA8B0087E5F0 /* CountryListScreen.swift in Sources */,
+				612F3E3327E4CA8B0087E5F0 /* BicycleSharingSystemListViewModel.swift in Sources */,
+				612F3E3627E4CA8B0087E5F0 /* BicycleSharingSystemListScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +382,7 @@
 					"\"shared\"",
 					"-lsqlite3",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.iosApp;
+				PRODUCT_BUNDLE_IDENTIFIER = de.darthkali.kmmbikeshare.iosApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -362,7 +410,7 @@
 					"\"shared\"",
 					"-lsqlite3",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.iosApp;
+				PRODUCT_BUNDLE_IDENTIFIER = de.darthkali.kmmbikeshare.iosApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -1,5 +1,6 @@
 package de.darthkali.kmmbikeshare.mockFactory
 
+
 data class Countries(
     val countryList: List<String> = listOf(
         "Argentina",
@@ -47,4 +48,55 @@ data class Countries(
         "United Kingdom",
         "United States"
     )
-)
+) {
+    // Need secondary constructor to initialize with no args in SwiftUI
+
+    constructor() : this(
+        countryList = listOf(
+            "Argentina",
+            "Aruba",
+            "Australia",
+            "Austria",
+            "Belgium",
+            "Brazil",
+            "Canada",
+            "Chile",
+            "China",
+            "Colombia",
+            "Cyprus",
+            "Czech Republic",
+            "Denmark",
+            "Estonia",
+            "Finland",
+            "France",
+            "Georgia",
+            "Germany",
+            "Hungary",
+            "Iceland",
+            "Isreal",
+            "Italy",
+            "Japan",
+            "Kazakhstan",
+            "Lithuania",
+            "Luxembourg",
+            "Mexico",
+            "Monaco",
+            "Morocco",
+            "Netherlands",
+            "Norway",
+            "Poland",
+            "Republic of Ireland",
+            "Romania",
+            "Russia",
+            "Singapore",
+            "Slovenia",
+            "South Korea",
+            "Spain",
+            "Sweden",
+            "Taiwan",
+            "United Arab Emirates",
+            "United Kingdom",
+            "United States"
+        )
+    )
+}
