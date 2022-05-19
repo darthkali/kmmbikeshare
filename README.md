@@ -1,15 +1,20 @@
 # kmmbikeshare
-<p>
-  <img src="assets/Android_BikeShareList.png" width="200" />
-  <img src="assets/Android_CountryList.png" width="200" /> 
-  <img src="assets/Android_Detail.png" width="200" />
-</p>
 
-<p>
-  <img src="assets/iOs_BikeShareList.png" width="200" />
-  <img src="assets/iOs_CountryList.png" width="200" /> 
-  <img src="assets/iOs_Detail.png" width="200" />
-</p>
+## Android
+
+
+  <kbd><img src="assets/Android_CountryList.png" width="200" /> </kbd>
+  <kbd><img src="assets/Android_BikeShareList.png" width="200" /></kbd>
+  <kbd><img src="assets/Android_Detail.png" width="200" /></kbd>
+    
+
+
+## iOs
+  
+  <kbd><img src="assets/iOs_CountryList.png" width="200" /> </kbd>
+  <kbd><img src="assets/iOs_BikeShareList.png" width="200" /></kbd>
+  <kbd><img src="assets/iOs_Detail.png" width="200" /></kbd>
+    
 
 ## Run iOS App
 
