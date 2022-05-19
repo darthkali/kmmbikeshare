@@ -1,8 +1,8 @@
 # kmmbikeshare
-<p float="left">
-  <img src="assets/Screenshot_1652979263.png" width="100" />
-  <img src="assets/Screenshot_1652979305.png" width="100" /> 
-  <img src="assets/Screenshot_1652979312.png" width="100" />
+<p float="center">
+  <img src="assets/Screenshot_1652979263.png" width="200" />
+  <img src="assets/Screenshot_1652979305.png" width="200" /> 
+  <img src="assets/Screenshot_1652979312.png" width="200" />
 </p>
 
 ## Run iOS App
