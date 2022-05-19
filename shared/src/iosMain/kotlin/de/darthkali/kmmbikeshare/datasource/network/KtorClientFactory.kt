@@ -13,8 +13,8 @@ actual class KtorClientFactory {
                 serializer = KotlinxSerializer(
                     Json {
                         ignoreUnknownKeys = true // if the server sends extra fields, ignore them
-                        useAlternativeNames =
-                            false // to avoid kotlin.native.concurrent.InvalidMutabilityException on iOs
+//                        useAlternativeNames =
+//                            false // to avoid kotlin.native.concurrent.InvalidMutabilityException on iOs
                     }
                 )
             }
