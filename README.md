@@ -2,18 +2,19 @@
 
 ## Android
 
-<p style="background-color:tomato;">
-  <img src="assets/Android_CountryList.png" width="200" /> 
-  <img src="assets/Android_BikeShareList.png" width="200" />
-  <img src="assets/Android_Detail.png" width="200" />
-</p>
+
+  <kbd><img src="assets/Android_CountryList.png" width="200" /> </kbd>
+  <kbd><img src="assets/Android_BikeShareList.png" width="200" /></kbd>
+  <kbd><img src="assets/Android_Detail.png" width="200" /></kbd>
+    
+
 
 ## iOs
-<p style="background-color:tomato;">
-  <img src="assets/iOs_CountryList.png" width="300" /> 
-  <img src="assets/iOs_BikeShareList.png" width="300" />
-  <img src="assets/iOs_Detail.png" width="300" />
-</p>
+  
+  <kbd><img src="assets/iOs_CountryList.png" width="200" /> </kbd>
+  <kbd><img src="assets/iOs_BikeShareList.png" width="200" /></kbd>
+  <kbd><img src="assets/iOs_Detail.png" width="200" /></kbd>
+    
 
 ## Run iOS App
 
