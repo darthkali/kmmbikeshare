@@ -78,7 +78,7 @@ Use the suffix `native-mt` for the coroutine dependencies
 ## framework not found 
 Remove: Pods.framework in: Folder named Pods
 
-## Mac M1 Probleme
+## Mac M1 Problems
 
 CocoaPods will not be installed:
 <https://medium.com/p-society/cocoapods-on-apple-silicon-m1-computers-86e05aa10d3e>
