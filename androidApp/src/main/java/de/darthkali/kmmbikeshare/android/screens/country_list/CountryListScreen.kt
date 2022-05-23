@@ -38,7 +38,7 @@ fun CountryListScreen(
                         navController = navController
                     )
                 }
-            }
+
         }
     }
 }
