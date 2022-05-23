@@ -19,15 +19,15 @@
 
 ## Run iOS App
 
-To run the iOS app you need to follow these Steps: rebuild the app in
+To run the iOS app, you need to follow these Steps: rebuild the app in
 Android Studio `[Taskbar in AS → Build → Rebuild Project]` After that
 you need Xcode. In the App Folder is a iosWeeFood Folder. From there you
-can open the `workspace-file` in xcode. run the App with the Start Button
-on top
+can open the `workspace-file` in xcode. Run the App with the Start Button
+on top.
 
 ## Issues when building the iOS app
 
-In Case you never run a app in XCode there might be some issues. For
+In Case you never run an app in Xcode, there might be some issues. For
 some of them I have found a solution. 
 
 **At first:** Sometimes you have to build the app twice (have you tried turning it off and on again). And sometimes you need to rebuild the app in Android Studio
@@ -51,18 +51,18 @@ open the Terminal in `iosApp` directory from the app run:
 
 ## SQL-Delight problems
 
-go in xcode to the root project `iosApp → Targets` : set iosApp Filter to
-`All` und `Combined` 
+go in Xcode to the root project `iosApp → Targets` : set iosApp Filter to
+`All` and `Combined` 
 
 Build Settings → Linking → Other Linker Flag Set a new variable
 `-lsqlite3`
 
 ## no command line tool set
 
-go in xcode to `settings → locations` set a xcode version in the command
+go to Xcode to `settings → locations` set a Xcode version in the command
 line tool sections
 
-CoCoaPods <https://kotlinlang.org/docs/native-cocoapods.html>
+CocoaPods <https://kotlinlang.org/docs/native-cocoapods.html>
 
 Install the CocoaPods dependency manager: `sudo gem install cocoapods`
 
@@ -70,7 +70,7 @@ Install the cocoapods-generate plugin: `sudo gem install cocoapods-generate`
 
 ## Coroutines
 
-Use the suffix `native-mt` for the coroutine dependencies
+Use the suffix `native-mt` for the Coroutines dependencies
 `const val coroutines = "1.6.0-native-mt"`
 
 <https://stackoverflow.com/questions/66917563/kmm-on-ios-there-is-no-event-loop-use-runblocking-to-start-one>
